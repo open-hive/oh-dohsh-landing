@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, ShieldCheck } from "lucide-react"; 
+import { Menu, X, ShieldCheck } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
+  { name: "Portfolio", href: "/portfolio" },
   { name: "About Us", href: "/about" },
   { name: "Contact Us", href: "/contact" },
 ];
@@ -18,7 +19,7 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 w-full bg-white border-b border-gray-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          
+
           {/* Logo Section */}
           <Link href="/" className="flex items-center gap-2">
             <ShieldCheck className="h-8 w-8 text-secondary" />
