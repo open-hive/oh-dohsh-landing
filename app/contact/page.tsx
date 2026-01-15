@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
 
-      {/* ================= 1. HERO SECTION ================= */}
+{/* ================= 1. HERO SECTION ================= */}
       <section className="relative w-full py-20 md:py-28 bg-dark overflow-hidden">
         {/* Background: Cleaner, blurred office/meeting setting */}
         <div className="absolute inset-0 z-0">
@@ -22,8 +22,10 @@ export default function Contact() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Breadcrumbs */}
-          <div className="text-sm text-gray-400 mb-4 font-medium uppercase tracking-wider">
-            <Link href="/" className="hover:text-primary transition-colors">Home</Link> &gt; <span className="text-primary">Contact Us</span>
+          <div className="text-sm text-gray-400 mb-4 font-medium uppercase tracking-wider flex items-center justify-center gap-2">
+            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+            <span className="text-gray-500">•</span>
+            <span className="text-primary">Contact Us</span>
           </div>
 
           <h1 className="font-heading font-bold text-3xl md:text-5xl text-white mb-6 leading-tight">

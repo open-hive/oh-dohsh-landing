@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { CheckCircle2, Award, Users, Scale, Quote } from "lucide-react";
 
 export default function About() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
 
-      {/* ================= 1. HERO SECTION ================= */}
+{/* ================= 1. HERO SECTION ================= */}
       <section className="relative w-full py-20 md:py-28 bg-dark overflow-hidden">
         {/* Background: Cleaner, blurred office/meeting setting */}
         <div className="absolute inset-0 z-0">
@@ -22,8 +23,10 @@ export default function About() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Breadcrumbs */}
-          <div className="text-sm text-gray-400 mb-4 font-medium uppercase tracking-wider">
-            <Link href="/" className="hover:text-primary transition-colors">Home</Link> &gt; <span className="text-primary">About Us</span>
+          <div className="text-sm text-gray-400 mb-4 font-medium uppercase tracking-wider flex items-center justify-center gap-2">
+            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+            <span className="text-gray-500">•</span>
+            <span className="text-primary">About Us</span>
           </div>
 
           <h1 className="font-heading font-bold text-3xl md:text-5xl text-white mb-6 leading-tight">
@@ -34,18 +37,18 @@ export default function About() {
           </p>
         </div>
       </section>
-
       {/* ================= 2. WHO WE ARE (Story) ================= */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-            {/* Left Column: Image (Alternating from Home) */}
+            {/* Left Column: Image - Replaced with about us 1 */}
             <div className="relative h-[450px] rounded-lg overflow-hidden shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
+              <Image
+                src="/assets/images/about.jpg"
                 alt="Professional Consultation"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
               {/* Decorative Cyan Frame */}
               <div className="absolute top-4 left-4 right-4 bottom-4 border-2 border-white/20 rounded"></div>
@@ -196,42 +199,42 @@ export default function About() {
               name="Doris Mosetlhi"
               position="Founder & CEO"
               tenure="5 years"
-              image="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop"
+              image="/assets/images/profile placeholder.jpg"
               bio="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Doris has over 15 years of experience in occupational health and safety, with specialized expertise in mining sector compliance and ISO standards implementation."
             />
             <TeamMember
               name="Thabo Kgosi"
               position="Senior Safety Consultant"
               tenure="3 years"
-              image="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop"
+              image="/assets/images/profile placeholder.jpg"
               bio="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Thabo specializes in risk assessment and environmental impact studies, bringing a wealth of knowledge from the construction and mining industries."
             />
             <TeamMember
               name="Keitumetse Molefe"
               position="Environmental Specialist"
               tenure="2 years"
-              image="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop"
+              image="/assets/images/profile placeholder.jpg"
               bio="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras porttitor purus ac nunc varius, non rutrum mauris tincidunt. Keitumetse holds advanced certifications in environmental management and sustainability practices."
             />
             <TeamMember
               name="Lesego Tau"
               position="Compliance Officer"
               tenure="4 years"
-              image="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=400&auto=format&fit=crop"
+              image="/assets/images/profile placeholder.jpg"
               bio="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lesego ensures all client operations meet regulatory standards and maintains up-to-date knowledge of Botswana safety legislation."
             />
             <TeamMember
               name="Kagiso Seretse"
               position="Training Coordinator"
               tenure="3 years"
-              image="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&auto=format&fit=crop"
+              image="/assets/images/profile placeholder.jpg"
               bio="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Kagiso develops and delivers comprehensive safety training programs tailored to various industry sectors."
             />
             <TeamMember
               name="Neo Mothibi"
               position="Safety Officer"
               tenure="2 years"
-              image="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=400&auto=format&fit=crop"
+              image="/assets/images/profile placeholder.jpg"
               bio="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Neo conducts on-site inspections and provides practical safety solutions for our mining and industrial clients."
             />
           </div>
@@ -277,10 +280,11 @@ function TeamMember({ name, position, tenure, image, bio }: {
         <div className={`bg-white rounded-lg overflow-hidden shadow-md transition-all duration-500 ${isHovered ? 'transform rotate-2 scale-105 shadow-2xl' : ''}`}>
           {/* Profile Image */}
           <div className="relative h-80 overflow-hidden">
-            <img
+            <Image
               src={image}
               alt={name}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
             />
 
             {/* Quick Info Overlay - Slides in on hover */}
@@ -329,11 +333,12 @@ function TeamMember({ name, position, tenure, image, bio }: {
               </button>
 
               {/* Profile Image */}
-              <div className="h-64 overflow-hidden rounded-t-lg">
-                <img
+              <div className="h-64 overflow-hidden rounded-t-lg relative">
+                <Image
                   src={image}
                   alt={name}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
 

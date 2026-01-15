@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Shield, Leaf, ClipboardCheck } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -47,11 +48,13 @@ export default function Home() {
 
       {/* ================= 2. HERO IMAGE (Full Width Strip) ================= */}
       <section className="w-full h-[250px] md:h-[300px] relative">
-        {/* Image: Safety Officer / Mining Site */}
-        <img
-          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop"
-          alt="Safety Officer on Jwaneng Mine Site"
-          className="w-full h-full object-cover object-center"
+        {/* Image: Replaced with Home photo 2 */}
+        <Image
+          src="/assets/images/Home photo 2.JPG"
+          alt="Safety Officer on Site"
+          fill
+          className="object-cover object-center"
+          priority
         />
       </section>
 
@@ -85,12 +88,13 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Right Column: Visual Image */}
+            {/* Right Column: Visual Image - Replaced with Home photo 1 */}
             <div className="relative h-[500px] w-full rounded-lg overflow-hidden shadow-xl">
-              <img
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop"
+              <Image
+                src="/assets/images/Home photo 1.jpg"
                 alt="Professional Team Meeting"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
               {/* Decorative Box outline to match 'Apex' style */}
               <div className="absolute top-4 left-4 right-4 bottom-4 border-2 border-white/30 rounded"></div>

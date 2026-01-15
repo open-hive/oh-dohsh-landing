@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { 
   Shield, 
   Leaf, 
@@ -15,7 +16,7 @@ export default function Services() {
   return (
     <div className="flex flex-col min-h-screen bg-light">
       
-      {/* ================= 1. HERO SECTION ================= */}
+{/* ================= 1. HERO SECTION ================= */}
       <section className="relative w-full py-20 md:py-28 bg-dark overflow-hidden">
         {/* Background: Cleaner, blurred office/meeting setting */}
         <div className="absolute inset-0 z-0">
@@ -29,8 +30,10 @@ export default function Services() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Breadcrumbs */}
-          <div className="text-sm text-gray-400 mb-4 font-medium uppercase tracking-wider">
-            <Link href="/" className="hover:text-primary transition-colors">Home</Link> &gt; <span className="text-primary">Services</span>
+          <div className="text-sm text-gray-400 mb-4 font-medium uppercase tracking-wider flex items-center justify-center gap-2">
+            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+            <span className="text-gray-500">•</span>
+            <span className="text-primary">Services</span>
           </div>
           
           <h1 className="font-heading font-bold text-4xl md:text-5xl text-white mb-6">
@@ -135,12 +138,13 @@ export default function Services() {
               </div>
             </div>
 
-            {/* Right: Image */}
+            {/* Right: Image - Replaced with services photo */}
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
-               <img 
-                src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop" 
+              <Image 
+                src="/assets/images/Services.jpg" 
                 alt="PPE and Safety Gear" 
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
             </div>
 
