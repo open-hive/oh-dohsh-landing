@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ArrowRight, Shield, Leaf, ClipboardCheck } from "lucide-react";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -49,12 +48,10 @@ export default function Home() {
       {/* ================= 2. HERO IMAGE (Full Width Strip) ================= */}
       <section className="w-full h-[250px] md:h-[300px] relative">
         {/* Image: Replaced with Home photo 2 */}
-        <Image
+        <img
           src="/Home photo 2.JPG"
           alt="Safety Officer on Site"
-          fill
-          className="object-cover object-center"
-          priority
+          className="w-full h-full object-cover object-center"
         />
       </section>
 
@@ -90,11 +87,10 @@ export default function Home() {
 
             {/* Right Column: Visual Image - Replaced with Home photo 1 */}
             <div className="relative h-[500px] w-full rounded-lg overflow-hidden shadow-xl">
-              <Image
+              <img
                 src="/Home photo 1.jpg"
                 alt="Professional Team Meeting"
-                fill
-                className="object-cover"
+                className="w-full h-full object-cover"
               />
               {/* Decorative Box outline to match 'Apex' style */}
               <div className="absolute top-4 left-4 right-4 bottom-4 border-2 border-white/30 rounded"></div>

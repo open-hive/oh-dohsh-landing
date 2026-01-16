@@ -1,13 +1,12 @@
 import Link from "next/link";
-import Image from "next/image";
-import { 
-  Shield, 
-  Leaf, 
-  ClipboardCheck, 
-  HardHat, 
-  Siren, 
-  HeartPulse, 
-  Users, 
+import {
+  Shield,
+  Leaf,
+  ClipboardCheck,
+  HardHat,
+  Siren,
+  HeartPulse,
+  Users,
   PackageCheck,
   ArrowRight
 } from "lucide-react";
@@ -15,14 +14,14 @@ import {
 export default function Services() {
   return (
     <div className="flex flex-col min-h-screen bg-light">
-      
-{/* ================= 1. HERO SECTION ================= */}
+
+      {/* ================= 1. HERO SECTION ================= */}
       <section className="relative w-full py-20 md:py-28 bg-dark overflow-hidden">
         {/* Background: Cleaner, blurred office/meeting setting */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" 
-            alt="Corporate Office Blur" 
+          <img
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
+            alt="Corporate Office Blur"
             className="w-full h-full object-cover opacity-30"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#002b4d]/90 to-[#002b4d]/70"></div>
@@ -35,9 +34,9 @@ export default function Services() {
             <span className="text-gray-500">•</span>
             <span className="text-primary">Services</span>
           </div>
-          
+
           <h1 className="font-heading font-bold text-4xl md:text-5xl text-white mb-6">
-            Comprehensive Safety & <br/> Environmental Solutions
+            Comprehensive Safety & <br /> Environmental Solutions
           </h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
             From ISO alignment to on-site safety officers, we provide the expertise to keep your operations compliant, sustainable, and safe.
@@ -48,9 +47,9 @@ export default function Services() {
       {/* ================= 2. CORE SERVICES GRID ================= */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          
+
           {/* Card 1: OHS Management */}
-          <ServiceCard 
+          <ServiceCard
             icon={<Shield className="h-8 w-8 text-white" />}
             title="OHS Management"
             description="Complete oversight of your occupational health and safety needs."
@@ -58,7 +57,7 @@ export default function Services() {
           />
 
           {/* Card 2: Environmental Mgmt */}
-          <ServiceCard 
+          <ServiceCard
             icon={<Leaf className="h-8 w-8 text-white" />}
             title="Environmental Solutions"
             description="Sustainable strategies to minimize ecological impact."
@@ -66,7 +65,7 @@ export default function Services() {
           />
 
           {/* Card 3: Compliance Audits */}
-          <ServiceCard 
+          <ServiceCard
             icon={<ClipboardCheck className="h-8 w-8 text-white" />}
             title="Compliance Audits"
             description="Ensuring you meet all legal and mine-specific regulations."
@@ -74,7 +73,7 @@ export default function Services() {
           />
 
           {/* Card 4: On-Boarding (Jwaneng Specific) */}
-          <ServiceCard 
+          <ServiceCard
             icon={<Users className="h-8 w-8 text-white" />}
             title="On-Boarding Support"
             description="Streamlining the complex mine access process."
@@ -82,7 +81,7 @@ export default function Services() {
           />
 
           {/* Card 5: Emergency Response */}
-          <ServiceCard 
+          <ServiceCard
             icon={<Siren className="h-8 w-8 text-white" />}
             title="Emergency Preparedness"
             description="Readying your team for the unexpected."
@@ -90,7 +89,7 @@ export default function Services() {
           />
 
           {/* Card 6: Health & Wellness */}
-          <ServiceCard 
+          <ServiceCard
             icon={<HeartPulse className="h-8 w-8 text-white" />}
             title="Occupational Health"
             description="Prioritizing the physical and mental well-being of workers."
@@ -104,7 +103,7 @@ export default function Services() {
       <section className="py-20 bg-white border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            
+
             {/* Left: Content */}
             <div>
               <span className="text-primary font-bold tracking-wider uppercase text-sm">Beyond Consulting</span>
@@ -140,11 +139,10 @@ export default function Services() {
 
             {/* Right: Image - Replaced with services photo */}
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
-              <Image 
-                src="/Services.jpg" 
-                alt="PPE and Safety Gear" 
-                fill
-                className="object-cover"
+              <img
+                src="/Services.jpg"
+                alt="PPE and Safety Gear"
+                className="w-full h-full object-cover"
               />
             </div>
 
@@ -162,8 +160,8 @@ export default function Services() {
             Contact us today for a gap analysis or a quote on our safety management services.
           </p>
           <div className="flex justify-center gap-4">
-            <Link 
-              href="/contact" 
+            <Link
+              href="/contact"
               className="bg-white text-primary font-bold px-8 py-3 rounded shadow hover:bg-gray-100 transition-colors"
             >
               Get a Quote
@@ -184,10 +182,10 @@ function ServiceCard({ icon, title, description, features }: { icon: any, title:
       <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
         {icon}
       </div>
-      
+
       <h3 className="font-heading text-xl font-bold text-dark mb-3">{title}</h3>
       <p className="text-gray-500 mb-6 text-sm">{description}</p>
-      
+
       {/* Feature List */}
       <ul className="space-y-3 mb-6">
         {features.map((feature, index) => (

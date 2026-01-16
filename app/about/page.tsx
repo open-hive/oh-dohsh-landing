@@ -2,14 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { CheckCircle2, Award, Users, Scale, Quote } from "lucide-react";
 
 export default function About() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
 
-{/* ================= 1. HERO SECTION ================= */}
+      {/* ================= 1. HERO SECTION ================= */}
       <section className="relative w-full py-20 md:py-28 bg-dark overflow-hidden">
         {/* Background: Cleaner, blurred office/meeting setting */}
         <div className="absolute inset-0 z-0">
@@ -44,11 +43,10 @@ export default function About() {
 
             {/* Left Column: Image - Replaced with about us 1 */}
             <div className="relative h-[450px] rounded-lg overflow-hidden shadow-2xl">
-              <Image
+              <img
                 src="/about.jpg"
                 alt="Professional Consultation"
-                fill
-                className="object-cover"
+                className="w-full h-full object-cover"
               />
               {/* Decorative Cyan Frame */}
               <div className="absolute top-4 left-4 right-4 bottom-4 border-2 border-white/20 rounded"></div>
@@ -280,11 +278,10 @@ function TeamMember({ name, position, tenure, image, bio }: {
         <div className={`bg-white rounded-lg overflow-hidden shadow-md transition-all duration-500 ${isHovered ? 'transform rotate-2 scale-105 shadow-2xl' : ''}`}>
           {/* Profile Image */}
           <div className="relative h-80 overflow-hidden">
-            <Image
+            <img
               src={image}
               alt={name}
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-110"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
 
             {/* Quick Info Overlay - Slides in on hover */}
@@ -334,11 +331,10 @@ function TeamMember({ name, position, tenure, image, bio }: {
 
               {/* Profile Image */}
               <div className="h-64 overflow-hidden rounded-t-lg relative">
-                <Image
+                <img
                   src={image}
                   alt={name}
-                  fill
-                  className="object-cover"
+                  className="w-full h-full object-cover"
                 />
               </div>
 
