@@ -140,7 +140,7 @@ export default function Services() {
             {/* Right: Image - Replaced with services photo */}
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="/Services.jpg"
+                src="/oh-dohsh-landing/Services.jpg"
                 alt="PPE and Safety Gear"
                 className="w-full h-full object-cover"
               />

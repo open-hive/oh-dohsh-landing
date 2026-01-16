@@ -44,7 +44,7 @@ export default function About() {
             {/* Left Column: Image - Replaced with about us 1 */}
             <div className="relative h-[450px] rounded-lg overflow-hidden shadow-2xl">
               <img
-                src="/about.jpg"
+                src="/oh-dohsh-landing/about.jpg"
                 alt="Professional Consultation"
                 className="w-full h-full object-cover"
               />
@@ -279,7 +279,7 @@ function TeamMember({ name, position, tenure, image, bio }: {
           {/* Profile Image */}
           <div className="relative h-80 overflow-hidden">
             <img
-              src={image}
+              src="/oh-dohsh-landing/profile placeholder.jpg"
               alt={name}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
@@ -332,7 +332,7 @@ function TeamMember({ name, position, tenure, image, bio }: {
               {/* Profile Image */}
               <div className="h-64 overflow-hidden rounded-t-lg relative">
                 <img
-                  src={image}
+                  src="/oh-dohsh-landing/profile placeholder.jpg"
                   alt={name}
                   className="w-full h-full object-cover"
                 />
