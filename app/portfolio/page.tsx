@@ -63,7 +63,7 @@ const projects = [
         client: "Roads Department - Botswana",
         category: "Construction",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Developed and delivered comprehensive safety training for road construction crews.",
-        image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop",
+        image: "https://miro.medium.com/1*cwRh4tgQddKxfTrmOwnJCQ.jpeg",
         outcome: "Trained 200+ workers across 5 major projects",
         year: "2024"
     }

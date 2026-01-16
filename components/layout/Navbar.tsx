@@ -7,9 +7,9 @@ import { Menu, X, ShieldCheck } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "/" },
+  { name: "About Us", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
-  { name: "About Us", href: "/about" },
   { name: "Contact Us", href: "/contact" },
 ];
 
@@ -78,8 +78,8 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   className={`block px-3 py-2 text-base font-medium rounded-md ${isActive
-                      ? "text-secondary bg-blue-50 font-semibold"
-                      : "text-gray-700 hover:text-primary hover:bg-gray-50"
+                    ? "text-secondary bg-blue-50 font-semibold"
+                    : "text-gray-700 hover:text-primary hover:bg-gray-50"
                     }`}
                   onClick={() => setIsOpen(false)}
                 >
