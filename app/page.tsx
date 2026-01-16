@@ -50,7 +50,7 @@ export default function Home() {
       <section className="w-full h-[250px] md:h-[300px] relative">
         {/* Image: Replaced with Home photo 2 */}
         <Image
-          src="/assets/images/Home photo 2.JPG"
+          src="/Home photo 2.JPG"
           alt="Safety Officer on Site"
           fill
           className="object-cover object-center"
@@ -91,7 +91,7 @@ export default function Home() {
             {/* Right Column: Visual Image - Replaced with Home photo 1 */}
             <div className="relative h-[500px] w-full rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/assets/images/Home photo 1.jpg"
+                src="/Home photo 1.jpg"
                 alt="Professional Team Meeting"
                 fill
                 className="object-cover"

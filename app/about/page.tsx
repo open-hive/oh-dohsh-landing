@@ -45,7 +45,7 @@ export default function About() {
             {/* Left Column: Image - Replaced with about us 1 */}
             <div className="relative h-[450px] rounded-lg overflow-hidden shadow-2xl">
               <Image
-                src="/assets/images/about.jpg"
+                src="/about.jpg"
                 alt="Professional Consultation"
                 fill
                 className="object-cover"
@@ -199,42 +199,42 @@ export default function About() {
               name="Doris Mosetlhi"
               position="Founder & CEO"
               tenure="5 years"
-              image="/assets/images/profile placeholder.jpg"
+              image="/profile placeholder.jpg"
               bio="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Doris has over 15 years of experience in occupational health and safety, with specialized expertise in mining sector compliance and ISO standards implementation."
             />
             <TeamMember
               name="Thabo Kgosi"
               position="Senior Safety Consultant"
               tenure="3 years"
-              image="/assets/images/profile placeholder.jpg"
+              image="/profile placeholder.jpg"
               bio="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Thabo specializes in risk assessment and environmental impact studies, bringing a wealth of knowledge from the construction and mining industries."
             />
             <TeamMember
               name="Keitumetse Molefe"
               position="Environmental Specialist"
               tenure="2 years"
-              image="/assets/images/profile placeholder.jpg"
+              image="/profile placeholder.jpg"
               bio="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras porttitor purus ac nunc varius, non rutrum mauris tincidunt. Keitumetse holds advanced certifications in environmental management and sustainability practices."
             />
             <TeamMember
               name="Lesego Tau"
               position="Compliance Officer"
               tenure="4 years"
-              image="/assets/images/profile placeholder.jpg"
+              image="/profile placeholder.jpg"
               bio="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lesego ensures all client operations meet regulatory standards and maintains up-to-date knowledge of Botswana safety legislation."
             />
             <TeamMember
               name="Kagiso Seretse"
               position="Training Coordinator"
               tenure="3 years"
-              image="/assets/images/profile placeholder.jpg"
+              image="/profile placeholder.jpg"
               bio="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Kagiso develops and delivers comprehensive safety training programs tailored to various industry sectors."
             />
             <TeamMember
               name="Neo Mothibi"
               position="Safety Officer"
               tenure="2 years"
-              image="/assets/images/profile placeholder.jpg"
+              image="/profile placeholder.jpg"
               bio="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Neo conducts on-site inspections and provides practical safety solutions for our mining and industrial clients."
             />
           </div>
