@@ -86,7 +86,7 @@ export default function Portfolio() {
     return (
         <div className="flex flex-col min-h-screen bg-white">
 
-{/* ================= 1. HERO SECTION ================= */}
+            {/* ================= 1. HERO SECTION ================= */}
             <section className="relative w-full py-20 md:py-28 bg-dark overflow-hidden">
                 {/* Background */}
                 <div className="absolute inset-0 z-0">
@@ -125,8 +125,8 @@ export default function Portfolio() {
                                 key={category}
                                 onClick={() => setSelectedCategory(category)}
                                 className={`px-6 py-2.5 rounded-full font-semibold text-sm transition-all ${selectedCategory === category
-                                        ? "bg-primary text-white shadow-md"
-                                        : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
+                                    ? "bg-primary text-white shadow-md"
+                                    : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
                                     }`}
                             >
                                 {category}
@@ -170,19 +170,21 @@ export default function Portfolio() {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                        {clients.map((client, index) => (
-                            <div
-                                key={index}
-                                className="bg-white rounded-lg p-6 flex items-center justify-center hover:shadow-xl transition-shadow"
-                            >
-                                <img
-                                    src={client.logo}
-                                    alt={client.name}
-                                    className="max-w-full h-auto opacity-70 hover:opacity-100 transition-opacity"
-                                />
-                            </div>
-                        ))}
+                    <div className="max-w-4xl mx-auto">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                            {clients.map((client, index) => (
+                                <div
+                                    key={index}
+                                    className="bg-white rounded-lg p-6 flex items-center justify-center hover:shadow-xl transition-shadow"
+                                >
+                                    <img
+                                        src={client.logo}
+                                        alt={client.name}
+                                        className="max-w-full h-auto opacity-70 hover:opacity-100 transition-opacity"
+                                    />
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>

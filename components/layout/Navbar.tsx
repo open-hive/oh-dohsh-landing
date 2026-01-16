@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X, ShieldCheck } from "lucide-react";
 
 const navLinks = [
@@ -14,6 +15,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-white border-b border-gray-100 shadow-sm">
@@ -30,15 +32,21 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8 items-center">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-gray-600 hover:text-secondary font-medium transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`font-medium transition-colors relative ${isActive
+                    ? "text-secondary after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-0.5 after:bg-secondary"
+                    : "text-gray-600 hover:text-secondary"
+                    }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
             <Link
               href="/contact"
               className="bg-primary hover:bg-secondary text-white px-6 py-2.5 rounded text-sm font-semibold transition-colors shadow-sm"
@@ -63,16 +71,22 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-white border-b border-gray-100">
           <div className="px-4 pt-2 pb-6 space-y-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`block px-3 py-2 text-base font-medium rounded-md ${isActive
+                      ? "text-secondary bg-blue-50 font-semibold"
+                      : "text-gray-700 hover:text-primary hover:bg-gray-50"
+                    }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </div>
         </div>
       )}
