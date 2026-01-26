@@ -16,7 +16,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-              Empowering Zero Harm workplaces across Botswana. Specializing in 
+              Empowering Zero Harm workplaces accross the continent and the global occupational safety and environmental management. Specializing in 
               occupational health, safety, and environmental management.
             </p>
           </div>
@@ -41,7 +41,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-400 text-sm">
                 <MapPin className="h-5 w-5 text-secondary shrink-0" />
-                <span>Jwaneng, Botswana</span>
+                <span>Botswana</span>
               </li>
               <li className="flex items-center gap-3 text-gray-400 text-sm">
                 <Phone className="h-5 w-5 text-secondary shrink-0" />
