@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X, ShieldCheck } from "lucide-react";
+import { Menu, X, ShieldCheck, LogIn, UserPlus } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -30,8 +30,8 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8 items-center">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-8 items-center">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -47,11 +47,25 @@ export default function Navbar() {
                 </Link>
               );
             })}
+          </div>
+
+          {/* Desktop Auth Buttons - Right Side */}
+          <div className="hidden md:flex items-center space-x-4">
+            {/* Sign Up Link */}
             <Link
-              href="/contact"
-              className="bg-primary hover:bg-secondary text-white px-6 py-2.5 rounded text-sm font-semibold transition-colors shadow-sm"
+              href="#"
+              className="text-secondary font-medium hover:text-primary transition-colors"
             >
-              Request a Quote
+              Sign Up
+            </Link>
+
+            {/* Client Login Button */}
+            <Link
+              href="#"
+              className="bg-secondary hover:bg-primary text-white px-6 py-2.5 rounded text-sm font-semibold transition-colors shadow-sm flex items-center gap-2"
+            >
+              <LogIn className="h-4 w-4" />
+              Client Login
             </Link>
           </div>
 
@@ -87,6 +101,27 @@ export default function Navbar() {
                 </Link>
               );
             })}
+
+            {/* Divider */}
+            <div className="border-t border-gray-200 my-3"></div>
+
+            {/* Mobile Login/Signup */}
+            <Link
+              href="#"
+              className="flex items-center gap-2 px-3 py-2 text-base font-medium rounded-md text-secondary hover:bg-blue-50"
+              onClick={() => setIsOpen(false)}
+            >
+              <UserPlus className="h-5 w-5" />
+              Sign Up
+            </Link>
+            <Link
+              href="#"
+              className="flex items-center gap-2 px-3 py-3 text-base font-semibold rounded-md bg-secondary text-white hover:bg-primary"
+              onClick={() => setIsOpen(false)}
+            >
+              <LogIn className="h-5 w-5" />
+              Client Login
+            </Link>
           </div>
         </div>
       )}
