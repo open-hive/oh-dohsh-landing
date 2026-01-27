@@ -1,0 +1,164 @@
+import Link from "next/link";
+import { ArrowRight, Shield, Leaf, ClipboardCheck } from "lucide-react";
+
+export default function Home() {
+  return (
+    <div className="flex flex-col min-h-screen">
+      
+      {/* ================= 1. HERO SECTION (Split Layout) ================= */}
+      {/* This now matches the reference image: Text Left, Image Right */}
+      <section className="relative w-full pt-12 pb-20 md:pt-20 md:pb-28 bg-white overflow-hidden">
+        
+        {/* CSS-based "Net/Wave" Pattern Background (Subtle texture) */}
+        <div className="absolute inset-0 z-0 opacity-[0.03]" 
+             style={{
+               backgroundImage: `radial-gradient(#0092ce 1px, transparent 1px)`,
+               backgroundSize: '30px 30px'
+             }}>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+            
+            {/* Left Column: Text Content */}
+            <div className="max-w-2xl">
+              <h1 className="font-heading font-bold text-4xl md:text-6xl text-dark leading-tight mb-6">
+                Empowering <span className="text-secondary">Zero Harm</span> Workplaces in Botswana.
+              </h1>
+              
+              <p className="text-lg text-gray-500 mb-8 leading-relaxed">
+                Comprehensive Occupational Health, Safety, and Environmental Management solutions aligned with ISO 45001 & 14001 standards.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                {/* Primary Button: Outline Style */}
+                <Link 
+                  href="/services" 
+                  className="px-8 py-3.5 rounded border-2 border-secondary text-secondary font-bold hover:bg-secondary hover:text-white transition-all duration-300 text-center"
+                >
+                  Explore Our Services
+                </Link>
+                
+                {/* Secondary Button: Solid Cyan */}
+                <Link 
+                  href="/contact" 
+                  className="px-8 py-3.5 rounded bg-primary text-white font-bold hover:bg-secondary transition-all duration-300 shadow-md text-center"
+                >
+                  Book Consultation
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column: Hero Image */}
+            <div className="relative h-[400px] md:h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop" 
+                alt="Safety Officer on Site" 
+                className="w-full h-full object-cover"
+              />
+              {/* Optional: Subtle gradient overlay on the image for better contrast if needed */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ================= 2. ABOUT US (Your Preferred Structure) ================= */}
+      <section className="py-24 bg-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            {/* Left Column: Text Content */}
+            <div className="space-y-8">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-secondary text-xs font-bold uppercase tracking-wider">
+                About DOHSH
+              </span>
+              
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark leading-tight">
+                Motswana-Founded. <br />
+                ISO-Aligned. <br />
+                <span className="text-primary">Safety-Focused.</span>
+              </h2>
+              
+              <p className="text-gray-600 text-lg leading-relaxed">
+                DOHSH All Safety Consultancy provides expert guidance in occupational health and safety. We network and empower organizations to create safer, sustainable workplaces through innovative solutions and strict regulatory compliance.
+              </p>
+
+              <Link 
+                href="/about" 
+                className="inline-block px-8 py-4 bg-secondary text-white font-bold rounded shadow-lg hover:bg-primary transition-colors"
+              >
+                Read Our Mission
+              </Link>
+            </div>
+
+            {/* Right Column: Visual Image */}
+            <div className="relative h-[500px] w-full rounded-lg overflow-hidden shadow-xl">
+              <img 
+                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop" 
+                alt="Professional Team Meeting" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute top-4 left-4 right-4 bottom-4 border-2 border-white/30 rounded"></div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ================= 3. CORE SERVICES GRID (Gradient Background) ================= */}
+      <section className="relative py-20 bg-gradient-to-r from-primary to-secondary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            {/* Column 1: OHS */}
+            <div className="bg-white p-8 rounded-lg shadow-2xl transform hover:-translate-y-2 transition-transform duration-300">
+              <div className="bg-blue-50 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                <Shield className="h-7 w-7 text-secondary" />
+              </div>
+              <h3 className="font-heading text-2xl font-bold text-dark mb-3">OHS Management</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Risk assessments, SHE files, and ISO 45001 alignment.
+              </p>
+              <Link href="/services" className="text-secondary font-bold text-sm uppercase tracking-wide flex items-center gap-2 group">
+                Learn More <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+
+            {/* Column 2: Environmental */}
+            <div className="bg-white p-8 rounded-lg shadow-2xl transform hover:-translate-y-2 transition-transform duration-300">
+              <div className="bg-teal-50 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                <Leaf className="h-7 w-7 text-primary" />
+              </div>
+              <h3 className="font-heading text-2xl font-bold text-dark mb-3">Environmental Solutions</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Impact assessments, waste management, and sustainability planning.
+              </p>
+              <Link href="/services" className="text-secondary font-bold text-sm uppercase tracking-wide flex items-center gap-2 group">
+                Learn More <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+
+            {/* Column 3: Compliance */}
+            <div className="bg-white p-8 rounded-lg shadow-2xl transform hover:-translate-y-2 transition-transform duration-300">
+              <div className="bg-gray-100 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                <ClipboardCheck className="h-7 w-7 text-dark" />
+              </div>
+              <h3 className="font-heading text-2xl font-bold text-dark mb-3">Compliance Audits</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Regulatory inspections and on-boarding certifications.
+              </p>
+              <Link href="/services" className="text-secondary font-bold text-sm uppercase tracking-wide flex items-center gap-2 group">
+                Learn More <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+}
