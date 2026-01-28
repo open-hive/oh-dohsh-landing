@@ -61,7 +61,7 @@ export default function Services() {
             icon={<Leaf className="h-8 w-8 text-white" />}
             title="Environmental Solutions"
             description="Sustainable strategies to minimize ecological impact."
-            features={["Impact Assessments (EIA)", "Waste Management Plans", "Pollution Control Strategies", "Sustainability Reporting"]}
+            features={["Impact Assessments (EIA)", "Waste Management Plans", "Pollution Control Strategies", "Sustainability Reporting", "ISO 140001: 2015 Alignment"]}
           />
 
           {/* Card 3: Compliance Audits */}
@@ -69,7 +69,7 @@ export default function Services() {
             icon={<ClipboardCheck className="h-8 w-8 text-white" />}
             title="Compliance Audits"
             description="Ensuring you meet all legal and mine-specific regulations."
-            features={["Legal Compliance Audits", "Gap Analysis", "Regulatory Inspections", "Audit Preparation"]}
+            features={["Legal Compliance Audits", "Gap Analysis", "Regulatory Inspections", "Audit Preparation", "ISO 9001 Alignment"]}
           />
 
           {/* Card 4: On-Boarding (Jwaneng Specific) */}
