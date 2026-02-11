@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 import { CheckCircle2, Award, Users, Scale, Quote } from "lucide-react";
 
@@ -182,59 +179,53 @@ export default function About() {
         </div>
       </section>
 
-      {/* ================= 6. MEET THE TEAM ================= */}
-      <section className="py-24 bg-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-3xl font-bold text-dark">Meet the Team</h2>
-            <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
-              Our dedicated professionals bring expertise and passion to every safety challenge.
-            </p>
+      {/* ================= 6. FOUNDER'S NOTE ================= */}
+      <section className="py-24 bg-gradient-to-b from-white via-blue-50 to-light">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header Strip */}
+          <div className="flex items-center gap-6">
+            <div className="relative w-40 h-40 md:w-48 md:h-48 bg-white border border-blue-200 shadow-lg overflow-hidden group">
+              <img
+                src="/profile placeholder.jpg"
+                alt="Founder portrait"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-secondary/95 via-secondary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                  <div className="text-xs uppercase tracking-wider text-primary font-semibold">Founder & CEO</div>
+                  <div className="font-heading text-lg font-bold">Lorem Impsium</div>
+                  <div className="text-xs text-white/90 mt-2">
+                    Occupational Health, Safety & Environmental Consultant
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute top-3 left-3 bg-white/95 text-secondary text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded-sm shadow">
+                Founder's Note
+              </div>
+              <div className="absolute inset-0 border border-white/60 m-3" aria-hidden="true"></div>
+            </div>
+
+            <div className="flex-1 h-1 bg-secondary/70 rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <TeamMember
-              name="Doris Mosetlhi"
-              position="Founder & CEO"
-              tenure="5 years"
-              image="/profile placeholder.jpg"
-              bio="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Doris has over 15 years of experience in occupational health and safety, with specialized expertise in mining sector compliance and ISO standards implementation."
-            />
-            <TeamMember
-              name="Thabo Kgosi"
-              position="Senior Safety Consultant"
-              tenure="3 years"
-              image="/profile placeholder.jpg"
-              bio="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Thabo specializes in risk assessment and environmental impact studies, bringing a wealth of knowledge from the construction and mining industries."
-            />
-            <TeamMember
-              name="Keitumetse Molefe"
-              position="Environmental Specialist"
-              tenure="2 years"
-              image="/profile placeholder.jpg"
-              bio="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras porttitor purus ac nunc varius, non rutrum mauris tincidunt. Keitumetse holds advanced certifications in environmental management and sustainability practices."
-            />
-            <TeamMember
-              name="Lesego Tau"
-              position="Compliance Officer"
-              tenure="4 years"
-              image="/profile placeholder.jpg"
-              bio="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lesego ensures all client operations meet regulatory standards and maintains up-to-date knowledge of Botswana safety legislation."
-            />
-            <TeamMember
-              name="Kagiso Seretse"
-              position="Training Coordinator"
-              tenure="3 years"
-              image="/profile placeholder.jpg"
-              bio="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Kagiso develops and delivers comprehensive safety training programs tailored to various industry sectors."
-            />
-            <TeamMember
-              name="Neo Mothibi"
-              position="Safety Officer"
-              tenure="2 years"
-              image="/profile placeholder.jpg"
-              bio="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Neo conducts on-site inspections and provides practical safety solutions for our mining and industrial clients."
-            />
+          {/* Note Body */}
+          <div className="mt-10 relative bg-white rounded-xl shadow-lg border border-blue-100 p-8">
+            <div className="absolute left-0 top-0 h-full w-1.5 bg-primary/80 rounded-l-xl" aria-hidden="true"></div>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              "From day one, DOHSH has focused on practical, people-first safety solutions that help
+              organizations work smarter and safer. Our commitment is simple: align with global
+              standards, respect local realities, and empower every team to go home safely."
+            </p>
+            <div className="mt-6">
+              <div className="font-heading text-lg font-bold text-dark">Doris Mosetlhi</div>
+              <div className="text-sm text-secondary font-semibold">Founder & CEO</div>
+            </div>
+          </div>
+
+          <div className="text-sm text-gray-500 mt-4">
+            Hover over the portrait to learn more about our founder.
           </div>
         </div>
       </section>
@@ -253,108 +244,5 @@ export default function About() {
       </section>
 
     </div>
-  );
-}
-
-// Team Member Component with Hover Animation and Modal
-function TeamMember({ name, position, tenure, image, bio }: {
-  name: string;
-  position: string;
-  tenure: string;
-  image: string;
-  bio: string;
-}) {
-  const [isHovered, setIsHovered] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-
-  return (
-    <>
-      <div
-        className="relative group cursor-pointer"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onClick={() => setShowModal(true)}
-      >
-        <div className={`bg-white rounded-lg overflow-hidden shadow-md transition-all duration-500 ${isHovered ? 'transform rotate-2 scale-105 shadow-2xl' : ''}`}>
-          {/* Profile Image */}
-          <div className="relative h-80 overflow-hidden">
-            <img
-              src="/oh-dohsh-landing/profile placeholder.jpg"
-              alt={name}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-
-            {/* Quick Info Overlay - Slides in on hover */}
-            <div className={`absolute inset-0 bg-gradient-to-t from-secondary via-secondary/95 to-transparent flex flex-col justify-end p-6 transition-all duration-500 ${isHovered ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
-              <div className="text-white">
-                <div className="text-sm font-semibold uppercase tracking-wider mb-1 text-primary">
-                  {position}
-                </div>
-                <div className="text-sm opacity-90">
-                  With company: {tenure}
-                </div>
-                <div className="mt-3 text-xs opacity-75 italic">
-                  Click to read more
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Name - Always Visible */}
-          <div className="p-6 text-center">
-            <h3 className="font-heading text-xl font-bold text-dark">{name}</h3>
-            <p className="text-gray-500 text-sm mt-1">{position}</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Modal - Full Details */}
-      {showModal && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
-          onClick={() => setShowModal(false)}
-        >
-          <div
-            className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="relative">
-              {/* Close Button */}
-              <button
-                onClick={() => setShowModal(false)}
-                className="absolute top-4 right-4 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors"
-              >
-                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-
-              {/* Profile Image */}
-              <div className="h-64 overflow-hidden rounded-t-lg relative">
-                <img
-                  src="/oh-dohsh-landing/profile placeholder.jpg"
-                  alt={name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Content */}
-              <div className="p-8">
-                <h2 className="font-heading text-3xl font-bold text-dark mb-2">{name}</h2>
-                <div className="flex items-center gap-4 mb-6 text-gray-600">
-                  <span className="font-semibold text-primary">{position}</span>
-                  <span className="text-sm">•</span>
-                  <span className="text-sm">{tenure} with company</span>
-                </div>
-
-                <div className="prose prose-lg max-w-none">
-                  <p className="text-gray-600 leading-relaxed">{bio}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-    </>
   );
 }
