@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail, ShieldCheck } from "lucide-react";
 
 export default function Footer() {
@@ -6,17 +7,25 @@ export default function Footer() {
     <footer className="bg-[#1a1a1a] text-white pt-16 pb-8 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          
+
           {/* Column 1: Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="h-8 w-8 text-primary" />
+              {/* <ShieldCheck className="h-8 w-8 text-primary" />
               <span className="font-heading font-bold text-2xl tracking-tight">
                 DOHSH
-              </span>
+              </span> */}
+              <Image
+                src="/logo.png"   // place your logo inside /public
+                alt="DOHSH Logo"
+                width={160}
+                height={50}
+                priority
+              // className="h-12 w-auto"
+              />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-              Empowering Zero Harm workplaces accross the continent and the global occupational safety and environmental management. Specializing in 
+              Empowering Zero Harm workplaces accross the continent and the global occupational safety and environmental management. Specializing in
               occupational health, safety, and environmental management.
             </p>
           </div>
@@ -54,7 +63,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
           © {new Date().getFullYear()} DOHSH All Safety Consultancy.
         </div>

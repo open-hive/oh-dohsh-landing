@@ -41,7 +41,7 @@ export default function About() {
             {/* Left Column: Image - Replaced with about us 1 */}
             <div className="relative h-[450px] rounded-lg overflow-hidden shadow-2xl">
               <img
-                src="/oh-dohsh-landing/about.jpg"
+                src="/about.jpg"
                 alt="Professional Consultation"
                 className="w-full h-full object-cover"
               />
@@ -186,7 +186,7 @@ export default function About() {
           <div className="flex items-center gap-6">
             <div className="relative w-40 h-40 md:w-48 md:h-48 bg-white border border-blue-200 shadow-lg overflow-hidden group">
               <img
-                src="/profile placeholder.jpg"
+                src="/ceo.jpg"
                 alt="Founder portrait"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
@@ -194,7 +194,7 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-secondary/95 via-secondary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
                   <div className="text-xs uppercase tracking-wider text-primary font-semibold">Founder & CEO</div>
-                  <div className="font-heading text-lg font-bold">Lorem Impsium</div>
+                  <div className="font-heading text-lg font-bold">Doris Kehinana</div>
                   <div className="text-xs text-white/90 mt-2">
                     Occupational Health, Safety & Environmental Consultant
                   </div>
@@ -213,19 +213,45 @@ export default function About() {
           {/* Note Body */}
           <div className="mt-10 relative bg-white rounded-xl shadow-lg border border-blue-100 p-8">
             <div className="absolute left-0 top-0 h-full w-1.5 bg-primary/80 rounded-l-xl" aria-hidden="true"></div>
-            <p className="text-gray-600 text-lg leading-relaxed">
-              "From day one, DOHSH has focused on practical, people-first safety solutions that help
-              organizations work smarter and safer. Our commitment is simple: align with global
-              standards, respect local realities, and empower every team to go home safely."
-            </p>
-            <div className="mt-6">
-              <div className="font-heading text-lg font-bold text-dark">Doris Mosetlhi</div>
-              <div className="text-sm text-secondary font-semibold">Founder & CEO</div>
-            </div>
-          </div>
+            <section className="max-w-4xl mx-auto px-6 py-16">
+              <blockquote className="relative text-gray-700 text-lg leading-relaxed space-y-6 font-light">
 
-          <div className="text-sm text-gray-500 mt-4">
-            Hover over the portrait to learn more about our founder.
+                {/* Opening Quote Mark */}
+                <span className="absolute -top-6 -left-4 text-6xl text-primary/20 font-serif">
+                  &ldquo;
+                </span>
+
+                <p>
+                  DOHSH All Safety Consultancy was established with a clear purpose: to enhance the standard of Occupational Health, Safety, and Environmental excellence across industries. We believe safety is not merely a regulatory obligation but a strategic foundation for sustainable growth and operational integrity.
+                </p>
+
+                <p>
+                  As a citizen-owned consultancy led by a Motswana woman, we are driven by accountability, excellence, and measurable impact. Our approach integrates compliance, innovation, and practical implementation to ensure that safety systems are not only developed, but effectively embedded within organizations.
+                </p>
+
+                <p>
+                  We are committed to supporting businesses through structured training, digitalized systems, contractor management, and proactive risk prevention strategies that protect communities, the environment, and performance.
+                </p>
+
+                <p>
+                  Our vision is to build resilient organizations where safety leadership becomes part of the culture — strengthening industries across Botswana, the region, and beyond.
+                </p>
+
+                <p className="font-medium text-dark">
+                  Together, we can lead with safety.
+                </p>
+              </blockquote>
+
+              {/* Author */}
+              <div className="mt-10 border-t border-gray-200 pt-6">
+                <div className="font-heading text-xl font-bold text-dark">
+                  Doris Kehinana
+                </div>
+                <div className="text-sm text-secondary font-semibold tracking-wide">
+                  Founder & CEO
+                </div>
+              </div>
+            </section>
           </div>
         </div>
       </section>

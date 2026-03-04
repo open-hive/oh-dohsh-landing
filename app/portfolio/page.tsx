@@ -13,7 +13,7 @@ const projects = [
         client: "Debswana Diamond Company",
         category: "Mining",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Comprehensive safety audit and compliance review for one of the world's richest diamond mines.",
-        image: "/oh-dohsh-landing/portfolio1.jpeg",
+        image: "/portfolio1.jpeg",
         outcome: "100% compliance achieved with ISO 45001 standards",
         year: "2024"
     },
@@ -23,7 +23,7 @@ const projects = [
         client: "Gaborone Development Corp",
         category: "Construction",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Implemented comprehensive safety protocols for major commercial development project.",
-        image: "/oh-dohsh-landing/portfolio2.jpeg",
+        image: "/portfolio2.jpeg",
         outcome: "Zero incidents recorded over 18-month project duration",
         year: "2023"
     },

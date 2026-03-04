@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X, ShieldCheck, LogIn, UserPlus } from "lucide-react";
+import { Menu, X, LogIn, UserPlus } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -23,11 +24,15 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
 
           {/* Logo Section */}
-          <Link href="/" className="flex items-center gap-2">
-            <ShieldCheck className="h-8 w-8 text-secondary" />
-            <span className="font-heading font-bold text-2xl text-dark tracking-tight">
-              DOHSH<span className="text-primary">.</span>
-            </span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo.png"   // place your logo inside /public
+              alt="DOHSH Logo"
+              width={160}
+              height={50}
+              priority
+            // className="h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation - Centered */}
@@ -75,7 +80,11 @@ export default function Navbar() {
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-600 hover:text-primary focus:outline-none"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </button>
           </div>
         </div>
@@ -114,6 +123,7 @@ export default function Navbar() {
               <UserPlus className="h-5 w-5" />
               Sign Up
             </Link>
+
             <Link
               href="#"
               className="flex items-center gap-2 px-3 py-3 text-base font-semibold rounded-md bg-secondary text-white hover:bg-primary"
