@@ -8,96 +8,372 @@ import {
   HeartPulse,
   Users,
   PackageCheck,
-  ArrowRight
+  ArrowRight,
+  Monitor,
+  Activity,
 } from "lucide-react";
+
+import ServicesTimeline from "@/components/ServicesTimeline"
+import ServiceBlock from "@/components/ServiceBlock"
+import Reveal from "@/components/animations/Reveal"
+
+import ServicesBarCanvas from "@/components/ServicesBarCanvas";
+
+
+const services = [
+  {
+    icon: "shield" as const,
+    title: "Occupational Health, Safety & Environmental Consultancy",
+    description:
+      "Expert OHSE advisory services that help organizations build effective safety management systems, reduce workplace risks, and maintain regulatory compliance across complex operational environments.",
+    featuresLeft: [
+      "Safety advisory and regulatory compliance guidance",
+      "Safety audits and compliance reviews",
+      "Routine and specialized workplace inspections",
+      "Risk assessments and hazard identification",
+      "Mining hazard risk assessments",
+    ],
+    featuresRight: [
+      "Contractor onboarding and SHE file development",
+      "Critical safe work procedure development",
+      "Working at heights safety procedures",
+      "Confined space entry procedures",
+      "Hot work and electrical isolation procedures",
+    ],
+  },
+
+  {
+    icon: "monitor" as const,
+    title: "Centralized Digital OHSE Management Platform",
+    description:
+      "A centralized digital system that enables organizations to manage safety documentation, contractor onboarding, compliance monitoring, and workforce training through one integrated platform.",
+    featuresLeft: [
+      "Digital contractor onboarding",
+      "Cloud-based SHE file management",
+      "Online OHSE training and induction programs",
+      "Remote workforce safety training access",
+      "Real-time safety documentation access",
+    ],
+    featuresRight: [
+      "Compliance requirement packages",
+      "Industry-specific safety documentation templates",
+      "Risk assessment templates",
+      "Safe work procedure templates",
+      "Contractor safety management guidance",
+    ],
+  },
+
+  {
+    icon: "users" as const,
+    title: "Safety Workforce Recruitment, Training & Deployment",
+    description:
+      "Identification, recruitment, training and deployment of qualified safety personnel to strengthen workplace safety and ensure compliance with industry standards.",
+    featuresLeft: [
+      "Safety practitioner and safety officer recruitment",
+      "First aider recruitment and placement",
+      "Fire marshal recruitment",
+      "Safety representative recruitment",
+      "Competency assessments and candidate screening",
+    ],
+    featuresRight: [
+      "First aid training",
+      "Fire safety and emergency response training",
+      "Safety representative training",
+      "Hazard identification and risk control training",
+      "ISO and ESG awareness training",
+    ],
+  },
+
+  {
+    icon: "activity" as const,
+    title: "Occupational Hygiene Monitoring",
+    description:
+      "Workplace exposure monitoring services that evaluate environmental conditions affecting worker health and support organizations in implementing effective risk control measures.",
+    featuresLeft: [
+      "Air quality monitoring",
+      "Noise level monitoring",
+      "Respirable and inhalable dust monitoring",
+      "Heat stress monitoring",
+      "Chemical exposure monitoring",
+    ],
+    featuresRight: [
+      "Workplace exposure assessments",
+      "Industrial hygiene risk evaluation",
+      "Worker health risk monitoring",
+      "Environmental condition monitoring",
+      "Safety control implementation guidance",
+    ],
+  },
+
+  {
+    icon: "leaf" as const,
+    title: "Environmental Monitoring & ESG Advisory",
+    description:
+      "Advisory services supporting organizations in environmental protection, sustainability practices, and ESG compliance across mining and industrial operations.",
+    featuresLeft: [
+      "ESG compliance and sustainability advisory",
+      "Climate risk and environmental impact assessments",
+      "Environmental monitoring and risk management",
+      "Dust and emissions monitoring",
+      "Water quality monitoring",
+    ],
+    featuresRight: [
+      "Mine rehabilitation and land restoration planning",
+      "Pollution control strategies",
+      "Environmental protection planning",
+      "Community health and safety planning",
+      "Sustainability and ESG reporting support",
+    ],
+  },
+
+  {
+    icon: "hardhat" as const,
+    title: "PPE & Safety Equipment Supply",
+    description:
+      "Supply of certified personal protective equipment and specialized safety gear designed to protect workers in mining, construction, engineering, and industrial operations.",
+    featuresLeft: [
+      "Safety helmets and hard hats",
+      "Protective gloves and face shields",
+      "Respiratory protection equipment",
+      "Hearing protection equipment",
+      "High-visibility safety clothing",
+    ],
+    featuresRight: [
+      "Flame-resistant protective clothing",
+      "Safety footwear and industrial boots",
+      "Fall protection systems and harnesses",
+      "Emergency response equipment",
+      "Specialized underground mining PPE",
+    ],
+  },
+];
+
+
 
 export default function Services() {
   return (
     <div className="flex flex-col min-h-screen bg-light">
 
-      {/* ================= 1. HERO SECTION ================= */}
-      <section className="relative w-full py-20 md:py-28 bg-dark overflow-hidden">
-        {/* Background: Cleaner, blurred office/meeting setting */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
-            alt="Corporate Office Blur"
-            className="w-full h-full object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#002b4d]/90 to-[#002b4d]/70"></div>
-        </div>
+      {/* ================= HERO SECTION ================= */}
+      {/* Requires: import ServicesBarCanvas from "@/components/ServicesBarCanvas"; */}
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          {/* Breadcrumbs */}
-          <div className="text-sm text-gray-400 mb-4 font-medium uppercase tracking-wider flex items-center justify-center gap-2">
-            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-            <span className="text-gray-500">•</span>
-            <span className="text-primary">Services</span>
+
+      <section className="relative w-full bg-[#EBF6FC] overflow-hidden">
+
+        {/* Brand-color top accent bar */}
+        <div
+          className="relative z-10 h-[3px]"
+          style={{
+            background: "linear-gradient(90deg, transparent 0%, #01B9EB 20%, #0092CE 50%, #01B9EB 80%, transparent 100%)",
+          }}
+        />
+
+        {/* Subtle blue grid texture */}
+        <div
+          className="absolute inset-0 pointer-events-none z-0"
+          style={{
+            backgroundImage: `
+        linear-gradient(rgba(0,146,206,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,146,206,0.06) 1px, transparent 1px)
+      `,
+            backgroundSize: "52px 52px",
+          }}
+        />
+
+        {/* Main split layout — stacks on mobile, side-by-side on lg+ */}
+        <div className="relative z-10 flex flex-col lg:flex-row lg:min-h-[560px]">
+
+          {/* ── LEFT: Typography ── */}
+          <div className="
+      w-full lg:flex-[0_0_52%]
+      px-6 sm:px-10 lg:px-14
+      pt-12 pb-8 lg:py-16
+      flex flex-col justify-center
+      border-b lg:border-b-0 lg:border-r border-[#0092CE]/15
+    ">
+
+            {/* Breadcrumb */}
+            <nav className="flex items-center gap-2.5 mb-7">
+              <Link
+                href="/"
+                className="text-[10px] font-medium tracking-[0.15em] uppercase text-[#001E3C]/40 hover:text-[#0092CE] transition-colors"
+              >
+                Home
+              </Link>
+              <span className="w-4 h-px bg-[#0092CE]/25" />
+              <span className="text-[10px] font-medium tracking-[0.15em] uppercase text-[#0092CE]">
+                Services
+              </span>
+            </nav>
+
+            {/* Eyebrow */}
+            <p
+              className="flex items-center gap-2.5 text-[10.5px] font-bold tracking-[0.28em] uppercase text-[#0092CE] mb-4"
+              style={{ fontFamily: "var(--font-barlow)" }}
+            >
+              <span className="w-5 h-px bg-[#01B9EB] flex-shrink-0" />
+              What We Offer · DOHSH
+            </p>
+
+            {/* Headline */}
+            <h1
+              className="text-[44px] sm:text-[56px] lg:text-[72px] font-extrabold leading-[0.9] tracking-[-0.01em] text-[#001E3C] uppercase mb-6 lg:mb-7"
+              style={{ fontFamily: "var(--font-barlow)" }}
+            >
+              Comprehensive<br />
+              Safety &amp;<br />
+              Environmental<br />
+              <span className="text-[#0092CE]">Solutions.</span>
+            </h1>
+
+            {/* Rule */}
+            <div className="w-9 h-[3px] bg-[#01B9EB] mb-5 lg:mb-6" />
+
+            {/* Body */}
+            <p className="text-[14px] font-light leading-[1.75] text-[#001E3C]/55 max-w-[390px] mb-8 lg:mb-10">
+              Our services combine{" "}
+              <strong className="text-[#001E3C] font-medium">technical expertise</strong>,
+              digital innovation, and practical field experience to support industries
+              including mining, construction, energy, manufacturing, and infrastructure.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2.5 px-7 py-3 bg-[#0092CE] text-white text-[10px] font-bold tracking-[0.16em] uppercase hover:bg-[#01B9EB] transition-colors"
+              >
+                Get a Consultation
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path
+                    d="M1.5 6h9M6.5 2l4 4-4 4"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </Link>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 px-6 py-3 border-[1.5px] border-[#0092CE]/45 text-[#0092CE] text-[10px] font-semibold tracking-[0.16em] uppercase hover:bg-[#0092CE] hover:text-white transition-all"
+              >
+                About Us
+              </Link>
+            </div>
           </div>
 
-          <h1 className="font-heading font-bold text-4xl md:text-5xl text-white mb-6">
-            Comprehensive Safety & <br /> Environmental Solutions
-          </h1>
-          <p className="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
-            From ISO alignment to on-site safety officers, we provide the expertise to keep your operations compliant, sustainable, and safe.
-          </p>
+          {/* ── RIGHT: Breathing bar chart + Industry pills ── */}
+          <div className="flex-1 flex flex-col overflow-hidden bg-[#D9EFF9]">
+
+            {/* Canvas — fixed height on mobile, grows on desktop */}
+            <div className="relative h-[300px] sm:h-[360px] lg:h-auto lg:flex-1 min-h-0">
+              <ServicesBarCanvas />
+            </div>
+
+            {/* Industry pills */}
+            <div className="flex border-t border-[#0092CE]/15 bg-[#EBF6FC] relative z-10">
+
+              {/* Mining */}
+              <div className="flex-1 p-3 sm:p-3.5 border-r border-[#0092CE]/12 flex flex-col gap-1.5 transition-colors duration-200 hover:bg-[#01B9EB]/[0.08]">
+                <svg className="opacity-80" width="18" height="18" viewBox="0 0 20 20" fill="none">
+                  <path d="M3 17l4-7 3 3 3-5 4 9H3Z"
+                    stroke="#0092CE" strokeWidth="1.2" strokeLinejoin="round" />
+                </svg>
+                <p
+                  className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#0092CE]"
+                  style={{ fontFamily: "var(--font-barlow)" }}
+                >
+                  Mining
+                </p>
+                <p className="hidden sm:block text-[10px] font-light leading-[1.5] text-[#001E3C]/45">
+                  Jwaneng sector &amp; underground ops
+                </p>
+              </div>
+
+              {/* Construction */}
+              <div className="flex-1 p-3 sm:p-3.5 border-r border-[#0092CE]/12 flex flex-col gap-1.5 transition-colors duration-200 hover:bg-[#01B9EB]/[0.08]">
+                <svg className="opacity-80" width="18" height="18" viewBox="0 0 20 20" fill="none">
+                  <rect x="2" y="11" width="16" height="6" rx="1" stroke="#0092CE" strokeWidth="1.2" />
+                  <path d="M5 11V7l5-4 5 4v4"
+                    stroke="#0092CE" strokeWidth="1.2" strokeLinejoin="round" />
+                </svg>
+                <p
+                  className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#0092CE]"
+                  style={{ fontFamily: "var(--font-barlow)" }}
+                >
+                  Construction
+                </p>
+                <p className="hidden sm:block text-[10px] font-light leading-[1.5] text-[#001E3C]/45">
+                  Site safety &amp; structural compliance
+                </p>
+              </div>
+
+              {/* Energy */}
+              <div className="flex-1 p-3 sm:p-3.5 flex flex-col gap-1.5 transition-colors duration-200 hover:bg-[#01B9EB]/[0.08]">
+                <svg className="opacity-80" width="18" height="18" viewBox="0 0 20 20" fill="none">
+                  <path d="M11 2L4 11h6l-1 7 7-9h-6l1-7Z"
+                    stroke="#0092CE" strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round" />
+                </svg>
+                <p
+                  className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#0092CE]"
+                  style={{ fontFamily: "var(--font-barlow)" }}
+                >
+                  Energy
+                </p>
+                <p className="hidden sm:block text-[10px] font-light leading-[1.5] text-[#001E3C]/45">
+                  Utilities, renewables &amp; infrastructure
+                </p>
+              </div>
+
+            </div>
+          </div>
+
         </div>
+
       </section>
+      {/* ================= END HERO SECTION ================= */}
+
+
 
       {/* ================= 2. CORE SERVICES GRID ================= */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="py-32 max-w-7xl mx-auto px-6">
+        {/* Header */}
+        <div className="max-w-3xl mx-auto text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
+            Integrated Occupational Health, Safety & Environmental Solutions
+          </h2>
 
-          {/* Card 1: OHS Management */}
-          <ServiceCard
-            icon={<Shield className="h-8 w-8 text-white" />}
-            title="OHS Management"
-            description="Complete oversight of your occupational health and safety needs."
-            features={["Risk Assessments (Baseline/Job)", "SHE Files & Safety Plans", "ISO 45001 Alignment", "Incident Investigations"]}
-          />
-
-          {/* Card 2: Environmental Mgmt */}
-          <ServiceCard
-            icon={<Leaf className="h-8 w-8 text-white" />}
-            title="Environmental Solutions"
-            description="Sustainable strategies to minimize ecological impact."
-            features={["Impact Assessments (EIA)", "Waste Management Plans", "Pollution Control Strategies", "Sustainability Reporting", "ISO 140001: 2015 Alignment"]}
-          />
-
-          {/* Card 3: Compliance Audits */}
-          <ServiceCard
-            icon={<ClipboardCheck className="h-8 w-8 text-white" />}
-            title="Compliance Audits"
-            description="Ensuring you meet all legal and mine-specific regulations."
-            features={["Legal Compliance Audits", "Gap Analysis", "Regulatory Inspections", "Audit Preparation", "ISO 9001 Alignment"]}
-          />
-
-          {/* Card 4: On-Boarding (Jwaneng Specific) */}
-          <ServiceCard
-            icon={<Users className="h-8 w-8 text-white" />}
-            title="On-Boarding Support"
-            description="Streamlining the complex mine access process."
-            features={["Medical Examination Booking", "SHE & Security Inductions", "Access Permit Facilitation", "Contractor Pack Approval"]}
-          />
-
-          {/* Card 5: Emergency Response */}
-          <ServiceCard
-            icon={<Siren className="h-8 w-8 text-white" />}
-            title="Emergency Preparedness"
-            description="Readying your team for the unexpected."
-            features={["Evacuation Drills", "Emergency Response Plans", "Fire Simulation Training", "First Aid Protocols"]}
-          />
-
-          {/* Card 6: Health & Wellness */}
-          <ServiceCard
-            icon={<HeartPulse className="h-8 w-8 text-white" />}
-            title="Occupational Health"
-            description="Prioritizing the physical and mental well-being of workers."
-            features={["Ergonomics Assessments", "Industrial Hygiene Surveys", "Stress Management", "Substance Abuse Prevention"]}
-          />
-
+          <p className="mt-6 text-lg text-gray-600 leading-relaxed">
+            DOHSH All Safety Consultancy delivers advanced occupational health,
+            safety and environmental solutions for high-risk industries including
+            mining, construction, energy and large-scale infrastructure projects.
+            Our services combine regulatory expertise, digital systems, workforce
+            capability development and environmental stewardship to help
+            organizations operate safely, efficiently and sustainably.
+          </p>
         </div>
+
+        <ServicesTimeline>
+          {services.map((service, index) => (
+            <Reveal key={index}>
+              <ServiceBlock
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+                featuresLeft={service.featuresLeft}
+                featuresRight={service.featuresRight}
+              />
+            </Reveal>
+          ))}
+        </ServicesTimeline>
+
+
       </section>
+
+
+
+
 
       {/* ================= 3. SPECIALIZED SUPPLY & SUPPORT ================= */}
       <section className="py-20 bg-white border-t border-gray-100">
@@ -140,7 +416,7 @@ export default function Services() {
             {/* Right: Image - Replaced with services photo */}
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="/Services.jpg"
+                src="/portfolio_placeholder.png"
                 alt="PPE and Safety Gear"
                 className="w-full h-full object-cover"
               />
@@ -162,7 +438,8 @@ export default function Services() {
           <div className="flex justify-center gap-4">
             <Link
               href="/contact"
-              className="bg-white text-primary font-bold px-8 py-3 rounded shadow hover:bg-gray-100 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3   text-[10px] font-semibold tracking-[0.16em] uppercase bg-white text-primary  rounded shadow hover:bg-gray-100 transition-colors"
+
             >
               Get a Quote
             </Link>

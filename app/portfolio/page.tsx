@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { Building2, CheckCircle, Filter } from "lucide-react";
 
+import PortfolioRadarCanvas from "@/components/PortfolioRadarCanvas";
+
 const categories = ["All", "Mining", "Construction", "Healthcare", "Manufacturing"];
 
 const projects = [
@@ -13,7 +15,7 @@ const projects = [
         client: "Debswana Diamond Company",
         category: "Mining",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Comprehensive safety audit and compliance review for one of the world's richest diamond mines.",
-        image: "/portfolio1.jpeg",
+        image: "/portfolio_placeholder.png",
         outcome: "100% compliance achieved with ISO 45001 standards",
         year: "2024"
     },
@@ -23,7 +25,7 @@ const projects = [
         client: "Gaborone Development Corp",
         category: "Construction",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Implemented comprehensive safety protocols for major commercial development project.",
-        image: "/portfolio2.jpeg",
+        image: "/portfolio_placeholder.png",
         outcome: "Zero incidents recorded over 18-month project duration",
         year: "2023"
     },
@@ -33,7 +35,7 @@ const projects = [
         client: "Princess Marina Hospital",
         category: "Healthcare",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Environmental impact assessment and waste management system implementation.",
-        image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
+        image: "/portfolio_placeholder.png",
         outcome: "ISO 14001 certification achieved within 6 months",
         year: "2024"
     },
@@ -43,7 +45,7 @@ const projects = [
         client: "Botswana Meat Commission",
         category: "Manufacturing",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Complete risk assessment and safety protocol development for meat processing facility.",
-        image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=2071&auto=format&fit=crop",
+        image: "/portfolio_placeholder.png",
         outcome: "Reduced workplace incidents by 85%",
         year: "2023"
     },
@@ -53,7 +55,7 @@ const projects = [
         client: "Debswana Diamond Company",
         category: "Mining",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Environmental management system implementation and ongoing compliance monitoring.",
-        image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?q=80&w=2070&auto=format&fit=crop",
+        image: "/portfolio_placeholder.png",
         outcome: "Sustained environmental compliance for 3+ years",
         year: "2022"
     },
@@ -63,7 +65,7 @@ const projects = [
         client: "Roads Department - Botswana",
         category: "Construction",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Developed and delivered comprehensive safety training for road construction crews.",
-        image: "https://miro.medium.com/1*cwRh4tgQddKxfTrmOwnJCQ.jpeg",
+        image: "/portfolio_placeholder.png",
         outcome: "Trained 200+ workers across 5 major projects",
         year: "2024"
     }
@@ -86,34 +88,189 @@ export default function Portfolio() {
     return (
         <div className="flex flex-col min-h-screen bg-white">
 
-            {/* ================= 1. HERO SECTION ================= */}
-            <section className="relative w-full py-20 md:py-28 bg-dark overflow-hidden">
-                {/* Background */}
-                <div className="absolute inset-0 z-0">
-                    <img
-                        src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
-                        alt="Corporate Office Blur"
-                        className="w-full h-full object-cover opacity-30"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#002b4d]/90 to-[#002b4d]/70"></div>
-                </div>
+            {/* ================= HERO SECTION ================= */}
+            {/* Requires: import PortfolioRadarCanvas from "@/components/PortfolioRadarCanvas"; */}
 
-                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    {/* Breadcrumbs */}
-                    <div className="text-sm text-gray-400 mb-4 font-medium uppercase tracking-wider flex items-center justify-center gap-2">
-                        <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-                        <span className="text-gray-500">•</span>
-                        <span className="text-primary">Portfolio</span>
+            <section className="relative w-full bg-[#EDF7FC] overflow-hidden">
+
+                {/* Brand-color top accent bar */}
+                <div
+                    className="relative z-10 h-[3px]"
+                    style={{
+                        background: "linear-gradient(90deg, transparent 0%, #01B9EB 20%, #0092CE 50%, #01B9EB 80%, transparent 100%)",
+                    }}
+                />
+
+                {/* Subtle blue grid texture */}
+                <div
+                    className="absolute inset-0 pointer-events-none z-0"
+                    style={{
+                        backgroundImage: `
+        linear-gradient(rgba(0,146,206,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,146,206,0.06) 1px, transparent 1px)
+      `,
+                        backgroundSize: "52px 52px",
+                    }}
+                />
+
+                {/* Main split layout — stacks on mobile, side-by-side on lg+ */}
+                <div className="relative z-10 flex flex-col lg:flex-row lg:min-h-[560px]">
+
+                    {/* ── LEFT: Typography ── */}
+                    <div className="
+      w-full lg:flex-[0_0_52%]
+      px-6 sm:px-10 lg:px-14
+      pt-12 pb-8 lg:py-16
+      flex flex-col justify-center
+      border-b lg:border-b-0 lg:border-r border-[#0092CE]/15
+    ">
+
+                        {/* Breadcrumb */}
+                        <nav className="flex items-center gap-2.5 mb-7">
+                            <Link
+                                href="/"
+                                className="text-[10px] font-medium tracking-[0.15em] uppercase text-[#001E3C]/40 hover:text-[#0092CE] transition-colors"
+                            >
+                                Home
+                            </Link>
+                            <span className="w-4 h-px bg-[#0092CE]/25" />
+                            <span className="text-[10px] font-medium tracking-[0.15em] uppercase text-[#0092CE]">
+                                Portfolio
+                            </span>
+                        </nav>
+
+                        {/* Eyebrow */}
+                        <p
+                            className="flex items-center gap-2.5 text-[10.5px] font-bold tracking-[0.28em] uppercase text-[#0092CE] mb-4"
+                            style={{ fontFamily: "var(--font-barlow)" }}
+                        >
+                            <span className="w-5 h-px bg-[#01B9EB] flex-shrink-0" />
+                            Our Work &amp; Impact · DOHSH
+                        </p>
+
+                        {/* Headline */}
+                        <h1
+                            className="text-[44px] sm:text-[56px] lg:text-[72px] font-extrabold leading-[0.9] tracking-[-0.01em] text-[#001E3C] uppercase mb-6 lg:mb-7"
+                            style={{ fontFamily: "var(--font-barlow)" }}
+                        >
+                            Proven Results<br />
+                            Across<br />
+                            Every<br />
+                            <span className="text-[#0092CE]">Industry.</span>
+                        </h1>
+
+                        {/* Rule */}
+                        <div className="w-9 h-[3px] bg-[#01B9EB] mb-5 lg:mb-6" />
+
+                        {/* Body */}
+                        <p className="text-[14px] font-light leading-[1.75] text-[#001E3C]/55 max-w-[390px] mb-8 lg:mb-10">
+                            Discover how we've helped organisations across Botswana achieve{" "}
+                            <strong className="text-[#001E3C] font-medium">safety excellence</strong> and
+                            environmental compliance — from mining operations to healthcare and infrastructure.
+                        </p>
+
+                        {/* CTAs */}
+                        <div className="flex flex-wrap items-center gap-3">
+                            <Link
+                                href="#projects"
+                                className="inline-flex items-center gap-2.5 px-7 py-3 bg-[#0092CE] text-white text-[10px] font-bold tracking-[0.16em] uppercase hover:bg-[#01B9EB] transition-colors"
+                            >
+                                View Projects
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                    <path
+                                        d="M1.5 6h9M6.5 2l4 4-4 4"
+                                        stroke="currentColor"
+                                        strokeWidth="1.5"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                    />
+                                </svg>
+                            </Link>
+                            <Link
+                                href="/contact"
+                                className="inline-flex items-center gap-2 px-6 py-3 border-[1.5px] border-[#0092CE]/45 text-[#0092CE] text-[10px] font-semibold tracking-[0.16em] uppercase hover:bg-[#0092CE] hover:text-white transition-all"
+                            >
+                                Contact Us
+                            </Link>
+                        </div>
                     </div>
 
-                    <h1 className="font-heading font-bold text-3xl md:text-5xl text-white mb-6 leading-tight">
-                        Our Work & Impact
-                    </h1>
-                    <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                        Discover how we've helped organizations across Botswana achieve safety excellence and environmental compliance.
-                    </p>
+                    {/* ── RIGHT: Radar chart + Outcome pills ── */}
+                    <div className="flex-1 flex flex-col overflow-hidden bg-[#D8EEF8]">
+
+                        {/* Canvas — fixed height on mobile, grows on desktop */}
+                        <div className="relative h-[300px] sm:h-[360px] lg:h-auto lg:flex-1 min-h-0">
+                            <PortfolioRadarCanvas />
+                        </div>
+
+                        {/* Outcome pills */}
+                        <div className="flex border-t border-[#0092CE]/15 bg-[#EDF7FC] relative z-10">
+
+                            {/* Certified */}
+                            <div className="flex-1 p-3 sm:p-3.5 border-r border-[#0092CE]/12 flex flex-col gap-1.5 transition-colors duration-200 hover:bg-[#01B9EB]/[0.08]">
+                                <svg className="opacity-80" width="18" height="18" viewBox="0 0 20 20" fill="none">
+                                    <path
+                                        d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.4l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2Z"
+                                        stroke="#0092CE" strokeWidth="1.2" strokeLinejoin="round"
+                                    />
+                                </svg>
+                                <p
+                                    className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#0092CE]"
+                                    style={{ fontFamily: "var(--font-barlow)" }}
+                                >
+                                    Certified
+                                </p>
+                                <p className="hidden sm:block text-[10px] font-light leading-[1.5] text-[#001E3C]/45">
+                                    ISO 45001 &amp; 14001 aligned
+                                </p>
+                            </div>
+
+                            {/* On-Time */}
+                            <div className="flex-1 p-3 sm:p-3.5 border-r border-[#0092CE]/12 flex flex-col gap-1.5 transition-colors duration-200 hover:bg-[#01B9EB]/[0.08]">
+                                <svg className="opacity-80" width="18" height="18" viewBox="0 0 20 20" fill="none">
+                                    <circle cx="10" cy="10" r="7.5" stroke="#0092CE" strokeWidth="1.2" />
+                                    <path
+                                        d="M10 6v4l3 2"
+                                        stroke="#0092CE" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"
+                                    />
+                                </svg>
+                                <p
+                                    className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#0092CE]"
+                                    style={{ fontFamily: "var(--font-barlow)" }}
+                                >
+                                    On-Time
+                                </p>
+                                <p className="hidden sm:block text-[10px] font-light leading-[1.5] text-[#001E3C]/45">
+                                    Delivery &amp; implementation record
+                                </p>
+                            </div>
+
+                            {/* Zero Harm */}
+                            <div className="flex-1 p-3 sm:p-3.5 flex flex-col gap-1.5 transition-colors duration-200 hover:bg-[#01B9EB]/[0.08]">
+                                <svg className="opacity-80" width="18" height="18" viewBox="0 0 20 20" fill="none">
+                                    <path
+                                        d="M4 10l4 4 8-8"
+                                        stroke="#0092CE" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"
+                                    />
+                                </svg>
+                                <p
+                                    className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#0092CE]"
+                                    style={{ fontFamily: "var(--font-barlow)" }}
+                                >
+                                    Zero Harm
+                                </p>
+                                <p className="hidden sm:block text-[10px] font-light leading-[1.5] text-[#001E3C]/45">
+                                    Measurable outcomes every time
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
+
             </section>
+            {/* ================= END HERO SECTION ================= */}
 
             {/* ================= 2. FILTER SECTION ================= */}
             <section className="py-12 bg-light border-b border-gray-200">
@@ -201,7 +358,7 @@ export default function Portfolio() {
                     </p>
                     <Link
                         href="/contact"
-                        className="inline-block px-8 py-4 bg-primary hover:bg-secondary text-white font-bold rounded shadow-lg transition-colors"
+                        className="inline-flex items-center gap-2 px-6 py-3   text-[10px] font-semibold tracking-[0.16em] uppercase  bg-primary hover:bg-secondary text-white rounded shadow-lg transition-colors"
                     >
                         Get in Touch
                     </Link>

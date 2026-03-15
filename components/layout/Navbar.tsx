@@ -17,6 +17,7 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  console.log("Current Path:", pathname); // Debugging line to check the current path
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-white border-b border-gray-100 shadow-sm">
@@ -38,12 +39,12 @@ export default function Navbar() {
           {/* Desktop Navigation - Centered */}
           <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-8 items-center">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive = pathname.replace(/\/$/, "") === link.href.replace(/\/$/, "");
               return (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`font-medium transition-colors relative ${isActive
+                  className={`transition-colors relative text-[12px] font-semibold  uppercase ${isActive
                     ? "text-secondary after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-0.5 after:bg-secondary"
                     : "text-gray-600 hover:text-secondary"
                     }`}
@@ -59,7 +60,8 @@ export default function Navbar() {
             {/* Sign Up Link */}
             <Link
               href="#"
-              className="text-secondary font-medium hover:text-primary transition-colors"
+
+              className="inline-flex items-center gap-2 px-6 py-3 border-[1.5px] border-[#0092CE] text-[#0092CE] text-[10px] font-semibold tracking-[0.16em] uppercase hover:bg-[#0092CE] hover:text-white transition-all"
             >
               Sign Up
             </Link>
@@ -67,7 +69,7 @@ export default function Navbar() {
             {/* Client Login Button */}
             <Link
               href="#"
-              className="bg-secondary hover:bg-primary text-white px-6 py-2.5 rounded text-sm font-semibold transition-colors shadow-sm flex items-center gap-2"
+              className="inline-flex items-center gap-2.5 px-7 py-3 bg-[#0092CE] text-white text-[10px] font-bold tracking-[0.16em] uppercase hover:bg-[#01B9EB] transition-colors text-sm  shadow-sm"
             >
               <LogIn className="h-4 w-4" />
               Client Login
@@ -100,7 +102,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`block px-3 py-2 text-base font-medium rounded-md ${isActive
+                  className={`block px-3 py-2 text-base text-[12px] font-semibold  uppercase rounded-md ${isActive
                     ? "text-secondary bg-blue-50 font-semibold"
                     : "text-gray-700 hover:text-primary hover:bg-gray-50"
                     }`}
@@ -117,7 +119,9 @@ export default function Navbar() {
             {/* Mobile Login/Signup */}
             <Link
               href="#"
-              className="flex items-center gap-2 px-3 py-2 text-base font-medium rounded-md text-secondary hover:bg-blue-50"
+              // className="flex items-center gap-2 px-3 py-2 text-base font-medium rounded-md text-secondary hover:bg-blue-50"
+
+              className="flex items-center gap-2 px-6 py-3 border-[1.5px] border-[#0092CE] text-[#0092CE] text-[10px] font-semibold tracking-[0.16em] uppercase hover:bg-[#0092CE] hover:text-white transition-all"
               onClick={() => setIsOpen(false)}
             >
               <UserPlus className="h-5 w-5" />
@@ -126,7 +130,7 @@ export default function Navbar() {
 
             <Link
               href="#"
-              className="flex items-center gap-2 px-3 py-3 text-base font-semibold rounded-md bg-secondary text-white hover:bg-primary"
+              className="flex items-center gap-2.5 px-7 py-3 bg-[#0092CE] text-white text-[10px] font-bold tracking-[0.16em] uppercase hover:bg-[#01B9EB] transition-colors  text-base"
               onClick={() => setIsOpen(false)}
             >
               <LogIn className="h-5 w-5" />

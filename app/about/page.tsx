@@ -1,38 +1,196 @@
 import Link from "next/link";
 import { CheckCircle2, Award, Users, Scale, Quote } from "lucide-react";
 
+import HeroNetworkCanvas from "@/components/HeroNetworkCanvas";
+
 export default function About() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
 
-      {/* ================= 1. HERO SECTION ================= */}
-      <section className="relative w-full py-20 md:py-28 bg-dark overflow-hidden">
-        {/* Background: Cleaner, blurred office/meeting setting */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
-            alt="Corporate Office Blur"
-            className="w-full h-full object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#002b4d]/90 to-[#002b4d]/70"></div>
-        </div>
+      {/* ================= HERO SECTION ================= */}
+      {/* Requires: import HeroNetworkCanvas from "@/components/HeroNetworkCanvas"; */}
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          {/* Breadcrumbs */}
-          <div className="text-sm text-gray-400 mb-4 font-medium uppercase tracking-wider flex items-center justify-center gap-2">
-            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-            <span className="text-gray-500">•</span>
-            <span className="text-primary">About Us</span>
+
+      <section className="relative w-full bg-[#E8F5FC] overflow-hidden">
+
+        {/* Brand-color top accent bar */}
+        <div
+          className="relative z-10 h-[3px]"
+          style={{
+            background: "linear-gradient(90deg, transparent 0%, #01B9EB 20%, #0092CE 50%, #01B9EB 80%, transparent 100%)",
+          }}
+        />
+
+        {/* Subtle blue grid texture */}
+        <div
+          className="absolute inset-0 pointer-events-none z-0"
+          style={{
+            backgroundImage: `
+        linear-gradient(rgba(0,146,206,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,146,206,0.06) 1px, transparent 1px)
+      `,
+            backgroundSize: "52px 52px",
+          }}
+        />
+
+        {/* Main split layout — stacks on mobile, side-by-side on lg+ */}
+        <div className="relative z-10 flex flex-col lg:flex-row lg:min-h-[560px]">
+
+          {/* ── LEFT: Typography ── */}
+          <div className="
+      w-full lg:flex-[0_0_52%]
+      px-6 sm:px-10 lg:px-14
+      pt-12 pb-8 lg:py-16
+      flex flex-col justify-center
+      border-b lg:border-b-0 lg:border-r border-[#0092CE]/15
+    ">
+
+            {/* Breadcrumb */}
+            <nav className="flex items-center gap-2.5 mb-7">
+              <Link
+                href="/"
+                className="text-[10px] font-medium tracking-[0.15em] uppercase text-[#001E3C]/40 hover:text-[#0092CE] transition-colors"
+              >
+                Home
+              </Link>
+              <span className="w-4 h-px bg-[#0092CE]/25" />
+              <span className="text-[10px] font-medium tracking-[0.15em] uppercase text-[#0092CE]">
+                About Us
+              </span>
+            </nav>
+
+            {/* Eyebrow */}
+            <p
+              className="flex items-center gap-2.5 text-[10.5px] font-bold tracking-[0.28em] uppercase text-[#0092CE] mb-4"
+              style={{ fontFamily: "var(--font-barlow)" }}
+            >
+              <span className="w-5 h-px bg-[#01B9EB] flex-shrink-0" />
+              OHSE Consultancy · Botswana
+            </p>
+
+            {/* Headline */}
+            <h1
+              className="text-[44px] sm:text-[56px] lg:text-[72px] font-extrabold leading-[0.9] tracking-[-0.01em] text-[#001E3C] uppercase mb-6 lg:mb-7"
+              style={{ fontFamily: "var(--font-barlow)" }}
+            >
+              Your Partner<br />
+              in Occupational<br />
+              Safety &amp;<br />
+              <span className="text-[#0092CE]">Environment.</span>
+            </h1>
+
+            {/* Rule */}
+            <div className="w-9 h-[3px] bg-[#01B9EB] mb-5 lg:mb-6" />
+
+            {/* Body */}
+            <p className="text-[14px] font-light leading-[1.75] text-[#001E3C]/55 max-w-[390px] mb-8 lg:mb-10">
+              <strong className="text-[#001E3C] font-medium">DOHSH All Safety Consultancy</strong> is a
+              Motswana-founded entity dedicated to empowering organisations with comprehensive OHSE
+              solutions — from workplace risk assessment to full environmental compliance.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center gap-3">
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2.5 px-7 py-3 bg-[#0092CE] text-white text-[10px] font-bold tracking-[0.16em] uppercase hover:bg-[#01B9EB] transition-colors"
+              >
+                Our Services
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path
+                    d="M1.5 6h9M6.5 2l4 4-4 4"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 border-[1.5px] border-[#0092CE]/45 text-[#0092CE] text-[10px] font-semibold tracking-[0.16em] uppercase hover:bg-[#0092CE] hover:text-white transition-all"
+              >
+                Contact Us
+              </Link>
+            </div>
           </div>
 
-          <h1 className="font-heading font-bold text-3xl md:text-5xl text-white mb-6 leading-tight">
-            Your Partner in Occupational Safety <br /> & Environmental Stewardship.
-          </h1>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            DOHSH All Safety Consultancy is a Motswana-founded entity dedicated to empowering organizations with comprehensive OHSE solutions.
-          </p>
+          {/* ── RIGHT: Network graph + Pillar cards ── */}
+          <div className="flex-1 flex flex-col overflow-hidden bg-[#DFF0F9]">
+
+            {/* Canvas — fixed height on mobile, grows on desktop */}
+            <div className="relative h-[320px] sm:h-[380px] lg:h-auto lg:flex-1 min-h-0">
+              <HeroNetworkCanvas />
+            </div>
+
+            {/* Pillar cards */}
+            <div className="flex border-t border-[#0092CE]/15 bg-[#E8F5FC] relative z-10">
+
+              {/* Safety */}
+              <div className="flex-1 p-3 sm:p-3.5 border-r border-[#0092CE]/12 flex flex-col gap-1.5 transition-colors duration-200 hover:bg-[#01B9EB]/[0.08]">
+                <svg className="opacity-80" width="18" height="18" viewBox="0 0 20 20" fill="none">
+                  <path d="M10 2L3 6v5c0 4 3.1 7.7 7 8.9C16.9 18.7 17 15 17 11V6L10 2Z"
+                    stroke="#0092CE" strokeWidth="1.2" strokeLinejoin="round" />
+                </svg>
+                <p
+                  className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#0092CE]"
+                  style={{ fontFamily: "var(--font-barlow)" }}
+                >
+                  Safety
+                </p>
+                <p className="hidden sm:block text-[10px] font-light leading-[1.5] text-[#001E3C]/45">
+                  Workplace risk assessment &amp; hazard control
+                </p>
+              </div>
+
+              {/* Environment */}
+              <div className="flex-1 p-3 sm:p-3.5 border-r border-[#0092CE]/12 flex flex-col gap-1.5 transition-colors duration-200 hover:bg-[#01B9EB]/[0.08]">
+                <svg className="opacity-80" width="18" height="18" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="7.5" stroke="#0092CE" strokeWidth="1.2" />
+                  <path d="M10 2.5C10 2.5 6.5 6 6.5 10s3.5 7.5 3.5 7.5"
+                    stroke="#0092CE" strokeWidth="1" strokeLinecap="round" />
+                  <path d="M10 2.5C10 2.5 13.5 6 13.5 10s-3.5 7.5-3.5 7.5"
+                    stroke="#0092CE" strokeWidth="1" strokeLinecap="round" />
+                  <line x1="2.5" y1="10" x2="17.5" y2="10" stroke="#0092CE" strokeWidth="1" />
+                </svg>
+                <p
+                  className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#0092CE]"
+                  style={{ fontFamily: "var(--font-barlow)" }}
+                >
+                  Environment
+                </p>
+                <p className="hidden sm:block text-[10px] font-light leading-[1.5] text-[#001E3C]/45">
+                  Environmental compliance &amp; impact studies
+                </p>
+              </div>
+
+              {/* Compliance */}
+              <div className="flex-1 p-3 sm:p-3.5 flex flex-col gap-1.5 transition-colors duration-200 hover:bg-[#01B9EB]/[0.08]">
+                <svg className="opacity-80" width="18" height="18" viewBox="0 0 20 20" fill="none">
+                  <rect x="3" y="4" width="14" height="13" rx="1.5" stroke="#0092CE" strokeWidth="1.2" />
+                  <path d="M7 4V2.5M13 4V2.5" stroke="#0092CE" strokeWidth="1.2" strokeLinecap="round" />
+                  <path d="M6 10l2.5 2.5L14 8" stroke="#0092CE" strokeWidth="1.2"
+                    strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <p
+                  className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#0092CE]"
+                  style={{ fontFamily: "var(--font-barlow)" }}
+                >
+                  Compliance
+                </p>
+                <p className="hidden sm:block text-[10px] font-light leading-[1.5] text-[#001E3C]/45">
+                  ISO 45001 &amp; 14001 audits &amp; certification
+                </p>
+              </div>
+
+            </div>
+          </div>
+
         </div>
+
       </section>
+      {/* ================= END HERO SECTION ================= */}
+
       {/* ================= 2. WHO WE ARE (Story) ================= */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,7 +199,7 @@ export default function About() {
             {/* Left Column: Image - Replaced with about us 1 */}
             <div className="relative h-[450px] rounded-lg overflow-hidden shadow-2xl">
               <img
-                src="/about.jpg"
+                src="/portfolio2.jpeg"
                 alt="Professional Consultation"
                 className="w-full h-full object-cover"
               />
