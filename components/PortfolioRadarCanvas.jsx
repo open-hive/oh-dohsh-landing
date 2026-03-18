@@ -8,13 +8,17 @@ const SECONDARY_RGB = "0,146,206";   // #0092CE
 const DARK_RGB = "0,30,60";
 
 const AXES = [
-    { label: "Mining", val: 0.92, phase: 0.0 },
-    { label: "Construction", val: 0.78, phase: 1.57 },
-    { label: "Healthcare", val: 0.62, phase: 3.14 },
-    { label: "Manufacturing", val: 0.74, phase: 4.71 },
+    { label: "Energy & Utilities", val: 0.88, phase: 0.0 },
+    { label: "Manufacturing", val: 0.74, phase: 0.79 },
+    { label: "Industrial Plants", val: 0.82, phase: 1.57 },
+    { label: "Transport & Logistics", val: 0.68, phase: 2.36 },
+    { label: "Infrastructure Dev.", val: 0.78, phase: 3.14 },
+    { label: "Banks", val: 0.58, phase: 3.93 },
+    { label: "Oil & Gas", val: 0.85, phase: 4.71 },
+    { label: "Government", val: 0.70, phase: 5.50 },
 ];
 
-const COMP = [0.48, 0.52, 0.44, 0.50];
+const COMP = [0.45, 0.42, 0.48, 0.40, 0.44, 0.38, 0.50, 0.42];
 
 export default function PortfolioRadarCanvas() {
     const canvasRef = useRef(null);
@@ -44,18 +48,19 @@ export default function PortfolioRadarCanvas() {
 
             const cx = W * 0.5;
             const cy = H * 0.5;
-            const R = Math.min(W, H) * 0.32;
+            // Slightly smaller R to leave more room for 8 labels
+            const R = Math.min(W, H) * 0.27;
             const N = AXES.length;
 
             // Radial glow
-            const grd = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * 1.4);
+            const grd = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * 1.5);
             grd.addColorStop(0, `rgba(${PRIMARY_RGB},0.10)`);
             grd.addColorStop(0.6, `rgba(${PRIMARY_RGB},0.03)`);
             grd.addColorStop(1, "transparent");
             ctx.fillStyle = grd;
             ctx.fillRect(0, 0, W, H);
 
-            // Clockwise rotating outer ring
+            // Clockwise rotating outer dashed ring
             ctx.save();
             ctx.translate(cx, cy);
             ctx.rotate(now * 0.18);
@@ -68,7 +73,7 @@ export default function PortfolioRadarCanvas() {
             ctx.setLineDash([]);
             ctx.restore();
 
-            // Counter-rotating inner ring
+            // Counter-rotating inner dashed ring
             ctx.save();
             ctx.translate(cx, cy);
             ctx.rotate(-now * 0.28);
@@ -100,8 +105,8 @@ export default function PortfolioRadarCanvas() {
                 ctx.stroke();
                 ctx.setLineDash([]);
                 if (ring < 4) {
-                    ctx.fillStyle = `rgba(${SECONDARY_RGB},0.35)`;
-                    ctx.font = `300 8px "DM Sans", sans-serif`;
+                    ctx.fillStyle = `rgba(${SECONDARY_RGB},0.30)`;
+                    ctx.font = `300 7px "DM Sans", sans-serif`;
                     ctx.textAlign = "left";
                     ctx.fillText(ring * 25 + "%", cx + r + 4, cy + 3);
                 }
@@ -110,6 +115,8 @@ export default function PortfolioRadarCanvas() {
             // Spokes + tick marks + label pills
             for (let i = 0; i < N; i++) {
                 const a = (i / N) * Math.PI * 2 - Math.PI / 2;
+
+                // Spoke
                 ctx.beginPath();
                 ctx.moveTo(cx, cy);
                 ctx.lineTo(cx + R * Math.cos(a), cy + R * Math.sin(a));
@@ -117,23 +124,26 @@ export default function PortfolioRadarCanvas() {
                 ctx.lineWidth = 0.6;
                 ctx.stroke();
 
+                // Tick dots
                 for (let t = 1; t <= 4; t++) {
                     const tr = R * t / 4;
                     ctx.beginPath();
-                    ctx.arc(cx + tr * Math.cos(a), cy + tr * Math.sin(a), 1.5, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(${SECONDARY_RGB},${t === 4 ? 0.5 : 0.18})`;
+                    ctx.arc(cx + tr * Math.cos(a), cy + tr * Math.sin(a), 1.2, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(${SECONDARY_RGB},${t === 4 ? 0.5 : 0.15})`;
                     ctx.fill();
                 }
 
-                // Label pill
-                const lx = cx + (R + 28) * Math.cos(a);
-                const ly = cy + (R + 28) * Math.sin(a);
+                // Label pill — pushed out further to avoid overlap with 8 axes
+                const labelR = R + 32;
+                const lx = cx + labelR * Math.cos(a);
+                const ly = cy + labelR * Math.sin(a);
                 const txt = AXES[i].label.toUpperCase();
-                ctx.font = `700 10px "Barlow Condensed", sans-serif`;
+                ctx.font = `700 8.5px "Barlow Condensed", sans-serif`;
                 const tw = ctx.measureText(txt).width;
-                ctx.fillStyle = `rgba(${DARK_RGB},0.08)`;
+                const ph = 12, pv = 5;
+                ctx.fillStyle = `rgba(${DARK_RGB},0.07)`;
                 ctx.beginPath();
-                ctx.roundRect(lx - tw / 2 - 7, ly - 11, tw + 14, 19, 2);
+                ctx.roundRect(lx - tw / 2 - ph / 2, ly - pv - 5, tw + ph, pv * 2 + 5, 2);
                 ctx.fill();
                 ctx.fillStyle = `rgba(${SECONDARY_RGB},0.90)`;
                 ctx.textAlign = "center";
@@ -158,9 +168,9 @@ export default function PortfolioRadarCanvas() {
             ctx.stroke();
             ctx.setLineDash([]);
             ctx.fillStyle = `rgba(${DARK_RGB},0.25)`;
-            ctx.font = `300 8px "DM Sans", sans-serif`;
+            ctx.font = `300 7.5px "DM Sans", sans-serif`;
             ctx.textAlign = "right";
-            ctx.fillText("INDUSTRY AVG", cx - R * 0.28, cy + R * 0.52);
+            ctx.fillText("INDUSTRY AVG", cx - R * 0.22, cy + R * 0.48);
 
             // DOHSH shape with breathing
             const globalPulse = 1 + 0.04 * Math.sin(now * 0.5);
@@ -191,7 +201,7 @@ export default function PortfolioRadarCanvas() {
             // Vertex dots
             points.forEach((p, i) => {
                 const dotPulse = 1 + 0.25 * Math.sin(now * 1.2 + AXES[i].phase);
-                const dotR = 4 * dotPulse;
+                const dotR = 3.5 * dotPulse;
 
                 // Outer glow
                 const gl = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, dotR * 4);
@@ -220,12 +230,12 @@ export default function PortfolioRadarCanvas() {
 
             // Center label
             ctx.fillStyle = `rgba(${SECONDARY_RGB},0.90)`;
-            ctx.font = `800 20px "Barlow Condensed", sans-serif`;
+            ctx.font = `800 18px "Barlow Condensed", sans-serif`;
             ctx.textAlign = "center";
-            ctx.fillText("DOHSH", cx, cy - 5);
+            ctx.fillText("DOHSH", cx, cy - 4);
             ctx.fillStyle = `rgba(${DARK_RGB},0.35)`;
-            ctx.font = `300 8px "DM Sans", sans-serif`;
-            ctx.fillText("SECTOR REACH", cx, cy + 10);
+            ctx.font = `300 7.5px "DM Sans", sans-serif`;
+            ctx.fillText("SECTOR REACH", cx, cy + 9);
 
             rafId = requestAnimationFrame(draw);
         }
