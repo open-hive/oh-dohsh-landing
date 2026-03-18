@@ -354,20 +354,349 @@ export default function Contact() {
       {/* ================= 4. FAQ SECTION ================= */}
       <section className="py-20 bg-light">
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="font-heading text-3xl font-bold text-center text-dark mb-12">Frequently Asked Questions</h2>
+          <h2 className="font-heading text-3xl font-bold text-center text-dark mb-12">
+            Frequently Asked Questions
+          </h2>
           <div className="space-y-4">
+
             <FaqItem
-              question="Do you offer ISO certification support?"
-              answer="Yes, we specialize in aligning your safety systems with ISO 45001, ISO 14001, and ISO 9001 standards."
+              question="What services does DOHSH All Safety Consultancy provide?"
+              answer={
+                <div>
+                  <p className="mb-2">We provide comprehensive Occupational Health, Safety, and Environmental (HSE) consultancy services, including:</p>
+                  <ul className="list-disc pl-5 space-y-1 mb-2">
+                    <li>Safety training and inductions</li>
+                    <li>SHE file development and compliance management</li>
+                    <li>Occupational hygiene monitoring</li>
+                    <li>Environmental monitoring and reporting</li>
+                    <li>Contractor onboarding and compliance verification</li>
+                    <li>Safety audits and risk assessments</li>
+                    <li>Supply of safety equipment and systems</li>
+                  </ul>
+                  <p>Our goal is to help organizations create safe, compliant, and productive workplaces.</p>
+                </div>
+              }
             />
+
             <FaqItem
-              question="Can you supply safety officers for long-term projects?"
-              answer="Absolutely. We provide qualified Safety Officers, Fire Marshals, and First Aiders for both short-term contracts and long-term project placements."
+              question="Which industries do you serve?"
+              answer={
+                <div>
+                  <p className="mb-2">Our services support multiple industries including:</p>
+                  <ul className="list-disc pl-5 space-y-1 mb-2">
+                    <li>Mining</li>
+                    <li>Construction</li>
+                    <li>Energy and utilities</li>
+                    <li>Manufacturing</li>
+                    <li>Engineering and maintenance contractors</li>
+                    <li>Logistics and transport</li>
+                    <li>Banks and financial institutions</li>
+                  </ul>
+                  <p>Any organization that must comply with workplace health, safety, and environmental regulations can benefit from our services.</p>
+                </div>
+              }
             />
+
             <FaqItem
-              question="Do you service areas outside Jwaneng?"
-              answer="While our headquarters are in Jwaneng to service the mines, we operate across Botswana including Gaborone, Francistown, and remote exploration sites."
+              question="What is a SHE File and why is it important?"
+              answer={
+                <div>
+                  <p className="mb-2">A Safety, Health and Environment (SHE) File is a compliance document required for contractors working on industrial or construction sites. It typically includes:</p>
+                  <ul className="list-disc pl-5 space-y-1 mb-2">
+                    <li>Risk assessments</li>
+                    <li>Method statements</li>
+                    <li>Safety policies</li>
+                    <li>Employee certifications</li>
+                    <li>Medical fitness records</li>
+                    <li>PPE compliance documentation</li>
+                  </ul>
+                  <p>A complete SHE file ensures legal compliance and demonstrates that a contractor is prepared to work safely.</p>
+                </div>
+              }
             />
+
+            <FaqItem
+              question="Do you help contractors prepare their SHE files?"
+              answer={
+                <p>Yes. We assist contractors in developing, reviewing, and maintaining compliant SHE files that meet site and regulatory requirements. We also ensure the file aligns with client-specific safety standards, especially in mining and construction environments.</p>
+              }
+            />
+
+            <FaqItem
+              question="Do you offer safety training and certification?"
+              answer={
+                <div>
+                  <p className="mb-2">Yes. We provide workplace safety training programs, including:</p>
+                  <ul className="list-disc pl-5 space-y-1 mb-2">
+                    <li>Safety induction training</li>
+                    <li>Hazard identification and risk assessment</li>
+                    <li>PPE training</li>
+                    <li>Emergency response and first aid awareness</li>
+                    <li>Safety leadership and supervision training</li>
+                  </ul>
+                  <p>Training can be conducted in-person or through digital platforms.</p>
+                </div>
+              }
+            />
+
+            <FaqItem
+              question="Do you provide safety equipment or PPE?"
+              answer={
+                <div>
+                  <p className="mb-2">Yes. We supply quality personal protective equipment (PPE) and safety solutions such as:</p>
+                  <ul className="list-disc pl-5 space-y-1 mb-2">
+                    <li>Helmets and safety boots</li>
+                    <li>High-visibility clothing</li>
+                    <li>Respiratory protection</li>
+                    <li>Fall protection systems</li>
+                    <li>Safety signage and equipment</li>
+                  </ul>
+                  <p>All equipment complies with recognized safety standards.</p>
+                </div>
+              }
+            />
+
+            <FaqItem
+              question="What is occupational hygiene monitoring?"
+              answer={
+                <div>
+                  <p className="mb-2">Occupational hygiene monitoring involves assessing workplace conditions that may affect workers' health and safety, including both surface and underground environments. This may include:</p>
+                  <ul className="list-disc pl-5 space-y-1 mb-2">
+                    <li>Dust exposure</li>
+                    <li>Noise levels</li>
+                    <li>Chemical exposure</li>
+                    <li>Air quality monitoring</li>
+                    <li>Heat stress assessments</li>
+                    <li>Underground occupational safety monitoring</li>
+                  </ul>
+                  <p>These assessments help organizations identify potential hazards and implement effective control measures to protect employees and maintain regulatory compliance.</p>
+                </div>
+              }
+            />
+
+            <FaqItem
+              question="Can DOHSH help with contractor onboarding?"
+              answer={
+                <div>
+                  <p className="mb-2">Yes. We assist companies with contractor safety onboarding, ensuring contractors meet all safety and compliance requirements before starting work. Our systems help streamline:</p>
+                  <ul className="list-disc pl-5 space-y-1">
+                    <li>Documentation review</li>
+                    <li>Compliance verification</li>
+                    <li>Safety induction records</li>
+                    <li>Digital onboarding processes</li>
+                  </ul>
+                </div>
+              }
+            />
+
+            <FaqItem
+              question="Do you offer digital safety solutions?"
+              answer={
+                <div>
+                  <p className="mb-2">Yes. We are developing digital safety platforms to help organizations manage:</p>
+                  <ul className="list-disc pl-5 space-y-1 mb-2">
+                    <li>SHE files</li>
+                    <li>Contractor compliance</li>
+                    <li>Safety training records</li>
+                    <li>Audit documentation</li>
+                  </ul>
+                  <p>These systems improve transparency, efficiency, and accessibility for safety managers and coordinators.</p>
+                </div>
+              }
+            />
+
+            <FaqItem
+              question="Where does DOHSH operate?"
+              answer={
+                <p>We are based in Gaborone, Botswana, but we support projects across the country and aim to expand our services across Africa and internationally.</p>
+              }
+            />
+
+            <FaqItem
+              question="Why choose DOHSH All Safety Consultancy?"
+              answer={
+                <div>
+                  <p className="mb-2">We are committed to:</p>
+                  <ul className="list-disc pl-5 space-y-1 mb-2">
+                    <li>Promoting safe and healthy workplaces</li>
+                    <li>Delivering practical and compliant safety solutions</li>
+                    <li>Supporting contractors and organizations with reliable expertise</li>
+                    <li>Driving innovation through digital safety management systems</li>
+                  </ul>
+                  <p>Our approach focuses on prevention, compliance, and operational excellence.</p>
+                </div>
+              }
+            />
+
+            <FaqItem
+              question="How can I request a consultation or quotation?"
+              answer={
+                <div>
+                  <p className="mb-2">You can request a consultation by:</p>
+                  <ul className="list-disc pl-5 space-y-1 mb-2">
+                    <li>Filling out the contact form on our website</li>
+                    <li>Sending us an email</li>
+                    <li>Calling our office directly</li>
+                  </ul>
+                  <p>Our team will assess your needs and provide a tailored solution and quotation.</p>
+                </div>
+              }
+            />
+
+            <FaqItem
+              question="Do you conduct workplace safety audits?"
+              answer={
+                <div>
+                  <p className="mb-2">Yes. We conduct comprehensive health, safety, and environmental audits to evaluate whether organizations are meeting regulatory and operational safety requirements. Our audits help identify:</p>
+                  <ul className="list-disc pl-5 space-y-1 mb-2">
+                    <li>Safety gaps</li>
+                    <li>Non-compliance risks</li>
+                    <li>Improvement opportunities</li>
+                    <li>Best practice recommendations</li>
+                  </ul>
+                  <p>This helps organizations build safer and more compliant workplaces.</p>
+                </div>
+              }
+            />
+
+            <FaqItem
+              question="Can DOHSH assist companies preparing for safety inspections?"
+              answer={
+                <div>
+                  <p className="mb-2">Yes. We help organizations prepare for regulatory inspections and internal safety reviews by ensuring all documentation, procedures, and compliance requirements are properly in place. This includes:</p>
+                  <ul className="list-disc pl-5 space-y-1">
+                    <li>SHE file verification</li>
+                    <li>Policy reviews</li>
+                    <li>Compliance gap analysis</li>
+                    <li>Staff safety awareness</li>
+                  </ul>
+                </div>
+              }
+            />
+
+            <FaqItem
+              question="Do you support banks and financial institutions with safety compliance?"
+              answer={
+                <div>
+                  <p className="mb-2">Yes. Banks and corporate offices also require occupational health and safety compliance to ensure safe working environments for employees and visitors. We assist with:</p>
+                  <ul className="list-disc pl-5 space-y-1">
+                    <li>Office risk assessments</li>
+                    <li>Fire safety compliance</li>
+                    <li>Emergency evacuation planning</li>
+                    <li>Workplace safety policies</li>
+                  </ul>
+                </div>
+              }
+            />
+
+            <FaqItem
+              question="Do you provide risk assessments for workplaces?"
+              answer={
+                <div>
+                  <p className="mb-2">Yes. Risk assessments are a critical part of workplace safety management. We help organizations:</p>
+                  <ul className="list-disc pl-5 space-y-1 mb-2">
+                    <li>Identify workplace hazards</li>
+                    <li>Evaluate potential risks</li>
+                    <li>Implement appropriate control measures</li>
+                    <li>Develop safe working procedures</li>
+                  </ul>
+                  <p>This ensures that businesses operate safely and responsibly.</p>
+                </div>
+              }
+            />
+
+            <FaqItem
+              question="What is contractor safety management?"
+              answer={
+                <div>
+                  <p className="mb-2">Contractor safety management ensures that all contractors working on a project meet health and safety compliance requirements. Our services include:</p>
+                  <ul className="list-disc pl-5 space-y-1 mb-2">
+                    <li>Contractor prequalification</li>
+                    <li>Safety documentation verification</li>
+                    <li>SHE file review</li>
+                    <li>Contractor onboarding and inductions</li>
+                  </ul>
+                  <p>This reduces the risk of incidents, delays, and legal liabilities.</p>
+                </div>
+              }
+            />
+
+            <FaqItem
+              question="Can DOHSH develop safety policies for companies?"
+              answer={
+                <p>Yes. We assist organizations in developing customized health, safety, and environmental policies aligned with regulatory requirements and industry standards. These policies form the foundation of an effective safety management system.</p>
+              }
+            />
+
+            <FaqItem
+              question="Do you provide environmental monitoring services?"
+              answer={
+                <div>
+                  <p className="mb-2">Yes. Our environmental monitoring services help organizations measure and manage environmental impact, including:</p>
+                  <ul className="list-disc pl-5 space-y-1 mb-2">
+                    <li>Air quality monitoring</li>
+                    <li>Noise monitoring</li>
+                    <li>Environmental compliance reporting</li>
+                    <li>Environmental risk assessments</li>
+                  </ul>
+                  <p>This supports organizations in meeting environmental regulations and sustainability commitments.</p>
+                </div>
+              }
+            />
+
+            <FaqItem
+              question="Can small businesses benefit from your services?"
+              answer={
+                <p>Absolutely. Small and medium-sized businesses often need practical safety solutions to comply with regulations without large internal safety departments. We provide affordable and scalable safety solutions tailored to small businesses and contractors.</p>
+              }
+            />
+
+            <FaqItem
+              question="Do you offer customized safety training for companies?"
+              answer={
+                <div>
+                  <p className="mb-2">Yes. We design customized safety training programs tailored to the specific risks and operational environments of each organization. Training programs can include:</p>
+                  <ul className="list-disc pl-5 space-y-1">
+                    <li>Industry-specific hazard training</li>
+                    <li>Safety leadership training</li>
+                    <li>Workplace compliance training</li>
+                    <li>Emergency preparedness training</li>
+                  </ul>
+                </div>
+              }
+            />
+
+            <FaqItem
+              question="How does DOHSH help organizations improve safety culture?"
+              answer={
+                <div>
+                  <p className="mb-2">We support organizations in building a strong safety culture by:</p>
+                  <ul className="list-disc pl-5 space-y-1 mb-2">
+                    <li>Providing safety awareness training</li>
+                    <li>Supporting leadership engagement in safety</li>
+                    <li>Implementing practical safety systems</li>
+                    <li>Encouraging worker participation in safety initiatives</li>
+                  </ul>
+                  <p>A strong safety culture leads to fewer incidents, improved productivity, and stronger employee morale.</p>
+                </div>
+              }
+            />
+
+            <FaqItem
+              question="How can my company start working with DOHSH?"
+              answer={
+                <div>
+                  <p className="mb-2">Getting started is simple:</p>
+                  <ol className="list-decimal pl-5 space-y-1">
+                    <li>Contact our team through the website or email</li>
+                    <li>Share your organization's safety needs or challenges</li>
+                    <li>We conduct an initial consultation</li>
+                    <li>We provide a tailored safety solution and quotation</li>
+                  </ol>
+                </div>
+              }
+            />
+
           </div>
         </div>
       </section>
@@ -377,7 +706,7 @@ export default function Contact() {
 }
 
 // Helper Component for FAQ Accordion
-function FaqItem({ question, answer }: { question: string, answer: string }) {
+function FaqItem({ question, answer }: { question: string; answer: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

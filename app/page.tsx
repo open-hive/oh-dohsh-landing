@@ -66,13 +66,46 @@ export default function Home() {
             <div className="w-9 h-[3px] bg-[#01B9EB] mb-5 lg:mb-6" />
 
             {/* Body */}
-            <p className="text-[14px] font-light leading-[1.75] text-[#001E3C]/55 max-w-[390px] mb-8 lg:mb-10">
+            <p className="text-[14px] font-light leading-[1.75] text-[#001E3C]/55 max-w-[390px] mb-6 lg:mb-8">
               Comprehensive{" "}
               <strong className="text-[#001E3C] font-medium">
                 Occupational Health, Safety &amp; Environmental
               </strong>{" "}
-              management solutions aligned with ISO 45001 &amp; 14001 standards.
+              management solutions aligned with ISO 45001:2018, ISO 14001:2015, ISO 9001:2015 &amp; ESG standards.
             </p>
+
+            {/* Accreditation badges */}
+            <div className="flex items-center gap-3 mb-6 pb-6 border-b border-[#0092CE]/10">
+              <span className="text-[9px] font-medium tracking-[0.15em] uppercase text-[#001E3C]/35 flex-shrink-0">
+                Accredited by
+              </span>
+              <div className="flex items-center gap-2.5">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-[#0092CE]/20 bg-[#0092CE]/[0.04]">
+                  <svg width="12" height="12" viewBox="0 0 20 20" fill="none" className="opacity-70 flex-shrink-0">
+                    <path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.4l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2Z"
+                      stroke="#0092CE" strokeWidth="1.2" strokeLinejoin="round" />
+                  </svg>
+                  <span
+                    className="text-[10px] font-bold tracking-[0.1em] uppercase text-[#0092CE]"
+                    style={{ fontFamily: "var(--font-barlow)" }}
+                  >
+                    BQA
+                  </span>
+                </div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-[#0092CE]/20 bg-[#0092CE]/[0.04]">
+                  <svg width="12" height="12" viewBox="0 0 20 20" fill="none" className="opacity-70 flex-shrink-0">
+                    <path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.4l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2Z"
+                      stroke="#0092CE" strokeWidth="1.2" strokeLinejoin="round" />
+                  </svg>
+                  <span
+                    className="text-[10px] font-bold tracking-[0.1em] uppercase text-[#0092CE]"
+                    style={{ fontFamily: "var(--font-barlow)" }}
+                  >
+                    HRDC
+                  </span>
+                </div>
+              </div>
+            </div>
 
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-3">
@@ -123,7 +156,7 @@ export default function Home() {
                   className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#0092CE]"
                   style={{ fontFamily: "var(--font-barlow)" }}
                 >
-                  ISO 45001
+                  ISO 45001:2018
                 </p>
                 <p className="hidden sm:block text-[10px] font-light leading-[1.5] text-[#001E3C]/45">
                   Occupational health &amp; safety
@@ -144,29 +177,30 @@ export default function Home() {
                   className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#0092CE]"
                   style={{ fontFamily: "var(--font-barlow)" }}
                 >
-                  ISO 14001
+                  ISO 14001:2015
                 </p>
                 <p className="hidden sm:block text-[10px] font-light leading-[1.5] text-[#001E3C]/45">
                   Environmental management
                 </p>
               </div>
 
-              {/* Zero Harm */}
+              {/* Human Factor */}
               <div className="flex-1 p-3 sm:p-3.5 flex flex-col gap-1.5 transition-colors duration-200 hover:bg-[#edf7fc]">
                 <svg className="opacity-80" width="18" height="18" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="6" r="3" stroke="#0092CE" strokeWidth="1.2" />
                   <path
-                    d="M4 10l4 4 8-8"
-                    stroke="#0092CE" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"
+                    d="M4 17c0-3.314 2.686-6 6-6s6 2.686 6 6"
+                    stroke="#0092CE" strokeWidth="1.2" strokeLinecap="round"
                   />
                 </svg>
                 <p
                   className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#0092CE]"
                   style={{ fontFamily: "var(--font-barlow)" }}
                 >
-                  Zero Harm
+                  Human Factor
                 </p>
                 <p className="hidden sm:block text-[10px] font-light leading-[1.5] text-[#001E3C]/45">
-                  Motswana-founded consultancy
+                  People-centred safety approach
                 </p>
               </div>
 
@@ -333,7 +367,7 @@ export default function Home() {
 
             {/* Intro Paragraph */}
             <p className="text-white/90 text-lg leading-relaxed">
-              We offer end-to-end management systems designed to minimize risk, ensure regulatory compliance, and promote a culture of safety across your organization.
+              We offer end-to-end management systems designed to minimize risk, ensure regulatory compliance, and promote a culture of safety across industries.
             </p>
           </div>
 

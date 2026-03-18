@@ -197,13 +197,12 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
             {/* Left Column: Image - Replaced with about us 1 */}
-            <div className="relative h-[450px] rounded-lg overflow-hidden shadow-2xl">
+            <div className="relative h-[500px] lg:h-[600px] rounded-lg overflow-hidden shadow-2xl">
               <img
                 src="/portfolio2.jpeg"
                 alt="Professional Consultation"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
-              {/* Decorative Cyan Frame */}
               <div className="absolute top-4 left-4 right-4 bottom-4 border-2 border-white/20 rounded"></div>
             </div>
 
@@ -278,6 +277,173 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* ================= TEAM SECTION ================= */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Header */}
+          <div className="max-w-2xl mx-auto text-center mb-16">
+            <p
+              className="flex items-center justify-center gap-2.5 text-[10.5px] font-bold tracking-[0.28em] uppercase text-[#0092CE] mb-4"
+              style={{ fontFamily: "var(--font-barlow)" }}
+            >
+              <span className="w-5 h-px bg-[#01B9EB] flex-shrink-0" />
+              The People Behind DOHSH
+              <span className="w-5 h-px bg-[#01B9EB] flex-shrink-0" />
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#001E3C] tracking-tight">
+              Our Expert Team
+            </h2>
+            <p className="mt-4 text-gray-500 leading-relaxed">
+              A multidisciplinary team of accredited safety, health, environmental,
+              and hygiene specialists committed to protecting people and workplaces
+              across Botswana.
+            </p>
+          </div>
+
+          {/* Team grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            {/* ── Neo Bridget Kenosi ── */}
+            <div className="group bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              {/* Photo / Avatar */}
+              <div className="relative h-80 bg-gradient-to-br from-[#EBF6FC] to-[#D9EFF9] overflow-hidden">
+                <img
+                  src="/bridget.jpeg"
+                  alt="Neo Bridget Kenosi"
+                  className="w-full h-full object-cover object-top"
+                />
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-[3px]"
+                  style={{ background: "linear-gradient(90deg, #01B9EB, #0092CE)" }}
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-[#001E3C]">Neo Bridget Kenosi</h3>
+                <p className="text-[#0092CE] text-sm font-semibold mt-0.5">
+                  OHSE & ESG Training Specialist
+                </p>
+
+                <div className="mt-4 space-y-2">
+                  <div className="flex items-start gap-2">
+                    <svg className="w-4 h-4 text-[#01B9EB] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 20 20">
+                      <path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.4l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2Z"
+                        stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
+                    </svg>
+                    <span className="text-xs text-gray-500">Western Australian (WA) Mining Club Member</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* ── Dimpho Otukile ── */}
+            <div className="group bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+
+              <div className="relative h-80 bg-gradient-to-br from-[#EBF6FC] to-[#D9EFF9] flex items-center justify-center overflow-hidden">
+                {/* Swap for <img src="/team/dimpho-otukile.jpg" ... /> when ready */}
+                <div className="w-28 h-28 rounded-full bg-[#0092CE] flex items-center justify-center shadow-lg">
+                  <span
+                    className="text-3xl font-extrabold text-white tracking-wide"
+                    style={{ fontFamily: "var(--font-barlow)" }}
+                  >
+                    DO
+                  </span>
+                </div>
+                <div className="absolute w-36 h-36 rounded-full border-2 border-[#0092CE]/20" />
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-[3px]"
+                  style={{ background: "linear-gradient(90deg, #01B9EB, #0092CE)" }}
+                />
+              </div>
+
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-[#001E3C]">Dimpho Otukile</h3>
+                <p className="text-[#0092CE] text-sm font-semibold mt-0.5">
+                  Occupational Hygiene & Food Safety Specialist
+                </p>
+
+                <div className="mt-4 space-y-2">
+                  <div className="flex items-start gap-2">
+                    <svg className="w-4 h-4 text-[#01B9EB] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 20 20">
+                      <circle cx="10" cy="10" r="7.5" stroke="currentColor" strokeWidth="1.3" />
+                      <path d="M4 10l4 4 8-8" stroke="currentColor" strokeWidth="1.3"
+                        strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span className="text-xs text-gray-500">Occupational Hygiene</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <svg className="w-4 h-4 text-[#01B9EB] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 20 20">
+                      <circle cx="10" cy="10" r="7.5" stroke="currentColor" strokeWidth="1.3" />
+                      <path d="M4 10l4 4 8-8" stroke="currentColor" strokeWidth="1.3"
+                        strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span className="text-xs text-gray-500">Food Safety</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* ── Sekao Marumoagae ── */}
+            <div className="group bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow sm:col-span-2 lg:col-span-1">
+              <div className="relative h-80 bg-gradient-to-br from-[#EBF6FC] to-[#D9EFF9] flex items-center justify-center overflow-hidden">
+                {/* Swap for <img src="/team/sekao-marumoagae.jpg" ... /> when ready */}
+                <div className="w-28 h-28 rounded-full bg-[#0092CE] flex items-center justify-center shadow-lg">
+                  <span
+                    className="text-3xl font-extrabold text-white tracking-wide"
+                    style={{ fontFamily: "var(--font-barlow)" }}
+                  >
+                    SM
+                  </span>
+                </div>
+                <div className="absolute w-36 h-36 rounded-full border-2 border-[#0092CE]/20" />
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-[3px]"
+                  style={{ background: "linear-gradient(90deg, #01B9EB, #0092CE)" }}
+                />
+              </div>
+
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-[#001E3C]">Sekao Marumoagae</h3>
+                <p className="text-[#0092CE] text-sm font-semibold mt-0.5">
+                  OHSE Specialist
+                </p>
+
+                <div className="mt-4 space-y-2">
+                  <div className="flex items-start gap-2">
+                    <svg className="w-4 h-4 text-[#01B9EB] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 20 20">
+                      <path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.4l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2Z"
+                        stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
+                    </svg>
+                    <span className="text-xs text-gray-500">Botswana Health Professions Body Member</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <svg className="w-4 h-4 text-[#01B9EB] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 20 20">
+                      <path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.4l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2Z"
+                        stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
+                    </svg>
+                    <span className="text-xs text-gray-500">ISO 45001:2018 Certified</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <svg className="w-4 h-4 text-[#01B9EB] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 20 20">
+                      <path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.4l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2Z"
+                        stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
+                    </svg>
+                    <span className="text-xs text-gray-500">ISO 14001:2015 Certified</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+
+        </div>
+      </section>
+      {/* ================= END TEAM SECTION ================= */}
 
       {/* ================= 5. WHY CHOOSE US GRID ================= */}
       <section className="py-24 bg-white">
@@ -384,7 +550,7 @@ export default function About() {
                 </p>
 
                 <p>
-                  As a citizen-owned consultancy led by a Motswana woman, we are driven by accountability, excellence, and measurable impact. Our approach integrates compliance, innovation, and practical implementation to ensure that safety systems are not only developed, but effectively embedded within organizations.
+                  As a citizen-owned consultancy led by a Motswana woman, we are driven by accountability, excellence, and measurable impact. Our approach integrates compliance, innovation, and practical implementation to ensure that safety systems are not only developed, but effectively embedded within organizational structures and/or operations.
                 </p>
 
                 <p>
