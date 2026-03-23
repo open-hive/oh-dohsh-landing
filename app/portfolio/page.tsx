@@ -97,7 +97,7 @@ const clients = [
     },
     {
         name: "Morupule Coal Mine",
-        logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOhpAEesdRJfKVy1YU4Pbpb2R_s45k4FKZtQ&s",
+        logo: "/morupule.png",
     },
 ];
 
