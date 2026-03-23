@@ -303,7 +303,7 @@ export default function About() {
           </div>
 
           {/* Team grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
             {/* ── Neo Bridget Kenosi ── */}
             <div className="group bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
@@ -434,6 +434,33 @@ export default function About() {
                     <span className="text-xs text-gray-500">ISO 14001:2015 Certified</span>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* ── Phenyo Kebinatshwene ── */}
+            <div className="group bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div className="relative h-80 bg-gradient-to-br from-[#EBF6FC] to-[#D9EFF9] flex items-center justify-center overflow-hidden">
+                {/* Swap for <img src="/team/phenyo.jpg" ... /> when ready */}
+                <div className="w-28 h-28 rounded-full bg-[#0092CE] flex items-center justify-center shadow-lg">
+                  <span
+                    className="text-3xl font-extrabold text-white tracking-wide"
+                    style={{ fontFamily: "var(--font-barlow)" }}
+                  >
+                    PK
+                  </span>
+                </div>
+                <div className="absolute w-36 h-36 rounded-full border-2 border-[#0092CE]/20" />
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-[3px]"
+                  style={{ background: "linear-gradient(90deg, #01B9EB, #0092CE)" }}
+                />
+              </div>
+
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-[#001E3C]">Phenyo Kebinatshwene</h3>
+                <p className="text-[#0092CE] text-sm font-semibold mt-0.5">
+                  OHSE Practitioner
+                </p>
               </div>
             </div>
 

@@ -493,7 +493,7 @@ export default function Contact() {
               question="Do you offer digital safety solutions?"
               answer={
                 <div>
-                  <p className="mb-2">Yes. We are developing digital safety platforms to help organizations manage:</p>
+                  <p className="mb-2">Yes. We have deployed a digital safety platforms to help organizations manage:</p>
                   <ul className="list-disc pl-5 space-y-1 mb-2">
                     <li>SHE files</li>
                     <li>Contractor compliance</li>

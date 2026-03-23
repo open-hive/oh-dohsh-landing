@@ -59,7 +59,8 @@ export default function Home() {
               Empowering<br />
               <span className="text-[#0092CE]">Zero Harm</span><br />
               Workplaces<br />
-              in Botswana.
+              Across Africa<br />
+              &amp; Beyond.
             </h1>
 
             {/* Rule */}
@@ -314,14 +315,19 @@ export default function Home() {
                 About DOHSH
               </span>
 
+
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark leading-tight">
-                Motswana-Founded. <br />
-                ISO-Aligned. <br />
-                <span className="text-primary">Safety-Focused.</span>
+                The Future of Safety<br />
+                is <span className="text-primary">Digital.</span>
               </h2>
 
               <p className="text-gray-600 text-lg leading-relaxed">
-                DOHSH All Safety Consultancy provides expert guidance in occupational health and safety. We network and empower organizations to create safer, sustainable workplaces through innovative solutions and strict regulatory compliance.
+                DOHSH has built a unified digital ecosystem that brings safety management,
+                compliance tracking, and contractor onboarding into one intelligent platform.
+                From SHE file management and real-time audit documentation to digital inductions
+                and workforce safety records — everything your organization needs to operate
+                safely and compliantly, accessible anywhere, at any time. Designed to scale
+                across Africa and beyond.
               </p>
 
               <Link
