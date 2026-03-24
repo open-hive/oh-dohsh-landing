@@ -56,9 +56,9 @@ export default function Home() {
               className="text-[44px] sm:text-[56px] lg:text-[72px] font-extrabold leading-[0.9] tracking-[-0.01em] text-[#001E3C] uppercase mb-6 lg:mb-7"
               style={{ fontFamily: "var(--font-barlow)" }}
             >
-              Empowering<br />
-              <span className="text-[#0092CE]">Zero Harm</span><br />
-              Workplaces<br />
+              Reimagining.<br />
+              Redefining.<br />
+              <span className="text-[#0092CE]">Investing in Safety</span><br />
               Across Africa<br />
               &amp; Beyond.
             </h1>
@@ -78,9 +78,21 @@ export default function Home() {
             {/* Accreditation badges */}
             <div className="flex items-center gap-3 mb-6 pb-6 border-b border-[#0092CE]/10">
               <span className="text-[9px] font-medium tracking-[0.15em] uppercase text-[#001E3C]/35 flex-shrink-0">
-                Accredited by
+                Certification
               </span>
               <div className="flex items-center gap-2.5">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-[#0092CE]/20 bg-[#0092CE]/[0.04]">
+                  <svg width="12" height="12" viewBox="0 0 20 20" fill="none" className="opacity-70 flex-shrink-0">
+                    <path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.4l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2Z"
+                      stroke="#0092CE" strokeWidth="1.2" strokeLinejoin="round" />
+                  </svg>
+                  <span
+                    className="text-[10px] font-bold tracking-[0.1em] uppercase text-[#0092CE]"
+                    style={{ fontFamily: "var(--font-barlow)" }}
+                  >
+                    CIPA
+                  </span>
+                </div>
                 <div className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-[#0092CE]/20 bg-[#0092CE]/[0.04]">
                   <svg width="12" height="12" viewBox="0 0 20 20" fill="none" className="opacity-70 flex-shrink-0">
                     <path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.4l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2Z"
