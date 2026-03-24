@@ -92,7 +92,7 @@ const clients = [
         logo: "/fnb.jpg",
     },
     {
-        name: "Lucara Diamond",
+        name: "Lucara Botswana",
         logo: "/lucara.png",
     },
     {
