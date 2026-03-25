@@ -70,7 +70,7 @@ export default function About() {
 
             {/* Headline */}
             <h1
-              className="text-[44px] sm:text-[56px] lg:text-[72px] font-extrabold leading-[0.9] tracking-[-0.01em] text-[#001E3C] uppercase mb-6 lg:mb-7"
+              className="text-[32px] sm:text-[40px] lg:text-[52px] font-extrabold leading-[0.9] tracking-[-0.01em] text-[#001E3C] uppercase mb-6 lg:mb-7"
               style={{ fontFamily: "var(--font-barlow)" }}
             >
               Your Partner<br />
