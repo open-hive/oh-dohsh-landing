@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
-          © {new Date().getFullYear()} DOHSH All Safety Consultancy.
+          © {new Date().getFullYear()} DOHSH All Safety Consultancy. All Rights Reserved.
         </div>
       </div>
     </footer>
