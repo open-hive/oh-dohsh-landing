@@ -87,7 +87,7 @@ export default function Contact() {
 
             {/* Body */}
             <p className="text-[14px] font-light leading-[1.75] text-[#001E3C]/55 max-w-[390px] mb-8 lg:mb-10">
-              We're here to assist. Reach out for{" "}
+              We&apos;re to assist. Reach out for{" "}
               <strong className="text-[#001E3C] font-medium">consultations</strong>, quotes,
               or support — our team responds within one business day.
             </p>
@@ -335,6 +335,116 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+      {/* ================= 3. CLIENT FEEDBACK SECTION ================= */}
+<section className="py-20 bg-[#EBF6FC]">
+  <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    {/* Header */}
+    <div className="text-center mb-10">
+      <p
+        className="flex items-center justify-center gap-2.5 text-[10.5px] font-bold tracking-[0.28em] uppercase text-[#0092CE] mb-4"
+        style={{ fontFamily: "var(--font-barlow)" }}
+      >
+        <span className="w-5 h-px bg-[#01B9EB] flex-shrink-0" />
+        Existing Clients
+        <span className="w-5 h-px bg-[#01B9EB] flex-shrink-0" />
+      </p>
+      <h2 className="text-2xl md:text-3xl font-bold text-[#001E3C] tracking-tight">
+        Share Your Experience
+      </h2>
+      <p className="mt-3 text-gray-500 text-sm leading-relaxed max-w-xl mx-auto">
+        Have you worked with DOHSH? We'd love to hear how our services have impacted your organization. Your feedback helps us grow and serve you better.
+      </p>
+    </div>
+
+    {/* Form Card */}
+    <div className="bg-white rounded-xl shadow-sm border border-[#0092CE]/15 p-8 md:p-10">
+
+      {/* Distinguishing label */}
+      <div className="flex items-center gap-3 mb-8 pb-6 border-b border-gray-100">
+        <div className="w-2 h-8 bg-[#01B9EB] rounded-full" />
+        <div>
+          <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#0092CE]">Client Feedback Form</p>
+          <p className="text-xs text-gray-400 mt-0.5">This form is for existing clients only</p>
+        </div>
+      </div>
+
+      <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Name */}
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-2">Your Name *</label>
+            <input
+              type="text"
+              placeholder="Enter your name"
+              className="w-full px-4 py-3 rounded border border-gray-300 focus:border-[#0092CE] focus:ring-2 focus:ring-[#0092CE]/20 outline-none transition-all bg-white text-sm"
+            />
+          </div>
+          {/* Company */}
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-2">Company / Organization *</label>
+            <input
+              type="text"
+              placeholder="e.g. Debswana"
+              className="w-full px-4 py-3 rounded border border-gray-300 focus:border-[#0092CE] focus:ring-2 focus:ring-[#0092CE]/20 outline-none transition-all bg-white text-sm"
+            />
+          </div>
+        </div>
+
+        {/* Service Used */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-2">Service You Used *</label>
+          <select className="w-full px-4 py-3 rounded border border-gray-300 focus:border-[#0092CE] focus:ring-2 focus:ring-[#0092CE]/20 outline-none transition-all bg-white text-gray-600 text-sm">
+            <option value="">Select a service...</option>
+            <option>OHSE Consultancy</option>
+            <option>Digital OHSE Platform</option>
+            <option>Safety Workforce Recruitment & Training</option>
+            <option>Occupational Hygiene Monitoring</option>
+            <option>Environmental Monitoring & ESG Advisory</option>
+            <option>PPE & Safety Equipment Supply</option>
+            <option>HSE Training Programs</option>
+          </select>
+        </div>
+
+        {/* Star Rating */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-3">Overall Rating *</label>
+          <StarRating />
+        </div>
+
+        {/* Feedback */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-2">Your Feedback *</label>
+          <textarea
+            rows={4}
+            placeholder="Tell us about your experience with DOHSH — what worked well, what we can improve..."
+            className="w-full px-4 py-3 rounded border border-gray-300 focus:border-[#0092CE] focus:ring-2 focus:ring-[#0092CE]/20 outline-none transition-all bg-white text-sm"
+          ></textarea>
+        </div>
+
+        {/* Consent */}
+        <div className="flex items-start gap-3">
+          <input
+            type="checkbox"
+            id="consent"
+            className="mt-1 accent-[#0092CE]"
+          />
+          <label htmlFor="consent" className="text-xs text-gray-500 leading-relaxed">
+            I consent to DOHSH using my feedback for service improvement and potentially displaying it as a testimonial on their website (name and company only).
+          </label>
+        </div>
+
+        {/* Submit */}
+        <button className="inline-flex items-center gap-2.5 px-7 py-3 bg-[#0092CE] text-white text-[10px] font-bold tracking-[0.16em] uppercase hover:bg-[#01B9EB] transition-colors w-full justify-center">
+          Submit Feedback <Send className="h-4 w-4" />
+        </button>
+
+      </form>
+    </div>
+  </div>
+</section>
 
       {/* ================= 3. MAP SECTION ================= */}
       {/* Full width Google Map centered on Jwaneng */}
@@ -723,6 +833,35 @@ function FaqItem({ question, answer }: { question: string; answer: React.ReactNo
         <div className="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
           {answer}
         </div>
+      )}
+    </div>
+  );
+}
+
+function StarRating() {
+  const [rating, setRating] = useState(0);
+  const [hovered, setHovered] = useState(0);
+
+  return (
+    <div className="flex gap-2">
+      {[1, 2, 3, 4, 5].map((star) => (
+        <button
+          key={star}
+          type="button"
+          onClick={() => setRating(star)}
+          onMouseEnter={() => setHovered(star)}
+          onMouseLeave={() => setHovered(0)}
+          className="text-2xl transition-transform hover:scale-110"
+        >
+          <span className={(hovered || rating) >= star ? "text-[#0092CE]" : "text-gray-300"}>
+            ★
+          </span>
+        </button>
+      ))}
+      {rating > 0 && (
+        <span className="text-xs text-gray-400 self-center ml-1">
+          {["", "Poor", "Fair", "Good", "Very Good", "Excellent"][rating]}
+        </span>
       )}
     </div>
   );

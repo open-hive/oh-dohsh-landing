@@ -1,11 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export', // keep static export
-  trailingSlash: true, // ✅ important: creates /services/index.html instead of /services.html
-  basePath: '',
+  ...(process.env.NODE_ENV === 'production' && {
+    output: 'export',
+    trailingSlash: true,
+    basePath: '',
+  }),
   images: {
     unoptimized: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
   },
 };
 

@@ -8,6 +8,7 @@ import {
     Leaf,
     HardHat,
     ArrowRight,
+    ClipboardCheck,
 } from "lucide-react"
 
 const iconMap = {
@@ -17,6 +18,7 @@ const iconMap = {
     activity: Activity,
     leaf: Leaf,
     hardhat: HardHat,
+    clipboardcheck: ClipboardCheck,
 }
 
 type ServiceBlockProps = {

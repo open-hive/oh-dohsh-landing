@@ -57,7 +57,7 @@ export default function Home() {
               style={{ fontFamily: "var(--font-barlow)" }}
             >
               Reimagining. Redefining. Investing.<br />
-              <span className="text-[#0092CE]">Safety</span><br />
+              In <span className="text-[#0092CE]">Safety</span><br />
               Across Africa<br />
               &amp; Beyond.
             </h1>
