@@ -11,6 +11,7 @@ import {
   ArrowRight,
   Monitor,
   Activity,
+  
 } from "lucide-react";
 
 import ServicesTimeline from "@/components/ServicesTimeline"
@@ -144,6 +145,27 @@ const services = [
       "Fall protection systems and harnesses",
       "Emergency response equipment",
       "Specialized underground mining PPE",
+    ],
+  },
+
+  {
+    icon: "clipboardcheck" as const,
+    title: "Health, Safety & Environmental Training Programs",
+    description:
+      "Accredited and customized HSE training programs designed to build workforce competency, ensure regulatory compliance, and embed a strong safety culture across all levels of an organization.",
+    featuresLeft: [
+      "OHSE induction and onboarding training",
+      "Hazard identification and risk control training",
+      "Working at heights and fall prevention training",
+      "Confined space entry and rescue training",
+      "Fire safety and emergency response training",
+    ],
+    featuresRight: [
+      "First aid and occupational health training",
+      "Environmental awareness and ESG training",
+      "ISO 45001 and ISO 14001 awareness training",
+      "Toolbox talk facilitation and delivery",
+      "Customized site-specific safety training programs",
     ],
   },
 ];
@@ -376,55 +398,7 @@ export default function Services() {
 
 
       {/* ================= 3. SPECIALIZED SUPPLY & SUPPORT ================= */}
-      <section className="py-20 bg-white border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-            {/* Left: Content */}
-            <div>
-              <span className="text-primary font-bold tracking-wider uppercase text-sm">Beyond Consulting</span>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark mt-2 mb-6">
-                Specialized Supply & <span className="text-secondary">Project Support</span>
-              </h2>
-              <p className="text-gray-600 text-lg mb-8">
-                We don't just advise; we equip. DOHSH provides the personnel and gear necessary to execute safety strategies on the ground.
-              </p>
-
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="bg-blue-50 p-3 rounded-full h-fit">
-                    <HardHat className="h-6 w-6 text-secondary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-dark text-lg">Project Personnel Supply</h3>
-                    <p className="text-gray-600">Placement of qualified Safety Officers, Fire Marshals, and First Aiders for long or short-term projects.</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="bg-blue-50 p-3 rounded-full h-fit">
-                    <PackageCheck className="h-6 w-6 text-secondary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-dark text-lg">PPE & Corporate Wear</h3>
-                    <p className="text-gray-600">Supply of specialized underground PPE, high-visibility corporate wear, and safety signage.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right: Image - Replaced with services photo */}
-            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src="/portfolio_placeholder.png"
-                alt="PPE and Safety Gear"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-          </div>
-        </div>
-      </section>
+      {/*  */}
 
       {/* ================= 4. CTA BANNER ================= */}
       <section className="bg-primary py-16">

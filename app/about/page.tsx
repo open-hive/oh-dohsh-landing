@@ -527,6 +527,46 @@ export default function About() {
               </div>
             </div>
           </div>
+          {/* Testimonials */}
+<div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+
+  {/* Quote 1 */}
+  <div className="bg-[#EBF6FC] border border-[#0092CE]/15 rounded-xl p-6 flex flex-col gap-4">
+    <Quote className="h-6 w-6 text-[#0092CE]/40" />
+    <p className="text-gray-600 text-sm leading-relaxed flex-1">
+      "DOHSH transformed our site safety culture. Their audits were thorough and their team genuinely understood the realities of mining operations on the ground."
+    </p>
+    <div className="border-t border-[#0092CE]/15 pt-4">
+      <div className="font-bold text-[#001E3C] text-sm">Kabo Mosweu</div>
+      <div className="text-[#0092CE] text-xs font-medium mt-0.5">Site Manager · Jwaneng Mining Contractor</div>
+    </div>
+  </div>
+
+  {/* Quote 2 */}
+  <div className="bg-[#EBF6FC] border border-[#0092CE]/15 rounded-xl p-6 flex flex-col gap-4">
+    <Quote className="h-6 w-6 text-[#0092CE]/40" />
+    <p className="text-gray-600 text-sm leading-relaxed flex-1">
+      "Their contractor onboarding system saved us weeks of paperwork. Everything is streamlined and our compliance documentation is always audit-ready."
+    </p>
+    <div className="border-t border-[#0092CE]/15 pt-4">
+      <div className="font-bold text-[#001E3C] text-sm">Tshepiso Ralefala</div>
+      <div className="text-[#0092CE] text-xs font-medium mt-0.5">HSE Coordinator · Construction Firm, Gaborone</div>
+    </div>
+  </div>
+
+  {/* Quote 3 */}
+  <div className="bg-[#EBF6FC] border border-[#0092CE]/15 rounded-xl p-6 flex flex-col gap-4">
+    <Quote className="h-6 w-6 text-[#0092CE]/40" />
+    <p className="text-gray-600 text-sm leading-relaxed flex-1">
+      "The training programs were practical, relevant, and delivered with real confidence. Our team walked away with skills they actually use every day."
+    </p>
+    <div className="border-t border-[#0092CE]/15 pt-4">
+      <div className="font-bold text-[#001E3C] text-sm">Mpho Sethibe</div>
+      <div className="text-[#0092CE] text-xs font-medium mt-0.5">Operations Director · Energy Utility, Botswana</div>
+    </div>
+  </div>
+
+</div>
         </div>
       </section>
 
@@ -552,9 +592,9 @@ export default function About() {
                 </div>
               </div>
 
-              <div className="absolute top-3 left-3 bg-white/95 text-secondary text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded-sm shadow">
+              {/* <div className="absolute top-3 left-3 bg-white/95 text-secondary text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded-sm shadow">
                 Founder's Note
-              </div>
+              </div> */}
               <div className="absolute inset-0 border border-white/60 m-3" aria-hidden="true"></div>
             </div>
 
@@ -562,9 +602,18 @@ export default function About() {
           </div>
 
           {/* Note Body */}
-          <div className="mt-10 relative bg-white rounded-xl shadow-lg border border-blue-100 p-8">
+          <div className="mt-4 relative bg-white rounded-xl shadow-lg border border-blue-100 p-8">
+
             <div className="absolute left-0 top-0 h-full w-1.5 bg-primary/80 rounded-l-xl" aria-hidden="true"></div>
-            <section className="max-w-4xl mx-auto px-6 py-16">
+
+             <p
+    className="flex items-center gap-2.5 text-[10.5px] font-bold tracking-[0.28em] uppercase text-[#0092CE] mb-6"
+    style={{ fontFamily: "var(--font-barlow)" }}
+  >
+    <span className="w-5 h-px bg-[#01B9EB] flex-shrink-0" />
+    Founder's Note
+  </p>
+            <section className="max-w-4xl mx-auto px-6 py-6">
               <blockquote className="relative text-gray-700 text-lg leading-relaxed space-y-6 font-light">
 
                 {/* Opening Quote Mark */}

@@ -58,13 +58,13 @@ export default function Navbar() {
           {/* Desktop Auth Buttons - Right Side */}
           <div className="hidden md:flex items-center space-x-4">
             {/* Sign Up Link */}
-            <Link
+            {/* <Link
               href="#"
 
               className="inline-flex items-center gap-2 px-6 py-3 border-[1.5px] border-[#0092CE] text-[#0092CE] text-[10px] font-semibold tracking-[0.16em] uppercase hover:bg-[#0092CE] hover:text-white transition-all"
             >
               Sign Up
-            </Link>
+            </Link> */}
 
             {/* Client Login Button */}
             <Link
@@ -72,7 +72,7 @@ export default function Navbar() {
               className="inline-flex items-center gap-2.5 px-7 py-3 bg-[#0092CE] text-white text-[10px] font-bold tracking-[0.16em] uppercase hover:bg-[#01B9EB] transition-colors text-sm  shadow-sm"
             >
               <LogIn className="h-4 w-4" />
-              Client Login
+              eSHEQ Portal
             </Link>
           </div>
 
