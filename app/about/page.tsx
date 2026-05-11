@@ -387,24 +387,21 @@ export default function About() {
             </div>
 
             {/* ── Sekao Marumoagae ── */}
-            <div className="group bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow sm:col-span-2 lg:col-span-1">
-              <div className="relative h-80 bg-gradient-to-br from-[#EBF6FC] to-[#D9EFF9] flex items-center justify-center overflow-hidden">
-                {/* Swap for <img src="/team/sekao-marumoagae.jpg" ... /> when ready */}
-                <div className="w-28 h-28 rounded-full bg-[#0092CE] flex items-center justify-center shadow-lg">
-                  <span
-                    className="text-3xl font-extrabold text-white tracking-wide"
-                    style={{ fontFamily: "var(--font-barlow)" }}
-                  >
-                    SM
-                  </span>
-                </div>
-                <div className="absolute w-36 h-36 rounded-full border-2 border-[#0092CE]/20" />
+            <div className="group bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              {/* Photo / Avatar */}
+              <div className="relative h-80 bg-gradient-to-br from-[#EBF6FC] to-[#D9EFF9] overflow-hidden">
+                <img
+                  src="/sekao.jpeg"
+                  alt="Sekao Marumoagae"
+                  className="w-full h-full object-cover object-top"
+                />
                 <div
                   className="absolute bottom-0 left-0 right-0 h-[3px]"
                   style={{ background: "linear-gradient(90deg, #01B9EB, #0092CE)" }}
                 />
               </div>
 
+              {/* Content */}
               <div className="p-6">
                 <h3 className="text-lg font-bold text-[#001E3C]">Sekao Marumoagae</h3>
                 <p className="text-[#0092CE] text-sm font-semibold mt-0.5">
