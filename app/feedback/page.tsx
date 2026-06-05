@@ -403,16 +403,11 @@ function FeedbackForm() {
           className="w-full px-4 py-3 rounded border border-gray-300 focus:border-[#0092CE] focus:ring-2 focus:ring-[#0092CE]/20 outline-none transition-all bg-white text-gray-600 text-sm"
         >
           <option value="">Select a service...</option>
-          <option>OHSE Consultancy</option>
-          <option>Digital OHSE Platform</option>
-          <option>Safety Workforce Recruitment &amp; Training</option>
-          <option>Occupational Hygiene Monitoring</option>
-          <option>Environmental Monitoring &amp; ESG Advisory</option>
-          <option>PPE &amp; Safety Equipment Supply</option>
-          <option>HSE Training Programs</option>
-          <option>SHE File Development &amp; Compliance</option>
-          <option>Safety Audits &amp; Risk Assessments</option>
-          <option>Contractor Onboarding</option>
+          <option>Compliance Support</option>
+          <option>Onboarding Certification</option>
+          <option>OHSE File Management</option>
+          <option>Trainings</option>
+          <option>Audits</option>
         </select>
       </div>
 

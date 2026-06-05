@@ -69,12 +69,14 @@ export default function Navbar() {
 
             {/* Client Login Button */}
             <Link
-              href="#"
-              className="inline-flex items-center gap-2.5 px-7 py-3 bg-[#0092CE] text-white text-[10px] font-bold tracking-[0.16em] uppercase hover:bg-[#01B9EB] transition-colors text-sm  shadow-sm"
-            >
-              <LogIn className="h-4 w-4" />
-              eSHEQ Portal
-            </Link>
+                href="https://dohshesheportal.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 px-7 py-3 bg-[#0092CE] text-white text-[10px] font-bold tracking-[0.16em] uppercase hover:bg-[#01B9EB] transition-colors text-sm shadow-sm"
+              >
+                <LogIn className="h-4 w-4" />
+                eSHEQ Portal
+              </Link>
           </div>
 
           {/* Mobile Menu Button */}
