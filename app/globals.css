@@ -1,13 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  /* DOHSH Brand Colors */
-  --color-primary: #00b9eb;   /* Cyan Blue */
-  --color-secondary: #0092ce; /* Deep Blue */
-  --color-dark: #333333;      /* Dark Grey Text */
-  --color-light: #f8f9fa;     /* Off-white backgrounds */
+  --color-primary: #00b9eb;
+  --color-secondary: #0092ce;
+  --color-dark: #333333;
+  --color-light: #f8f9fa;
 
-  /* Fonts mapped to Next.js font loaders */
   --font-sans: var(--font-inter);
   --font-heading: var(--font-barlow);
 }
