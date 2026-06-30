@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export default function BusinessCard() {
   return (
     <section className="flex-1 flex items-center justify-center bg-light py-16 px-4">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
@@ -15,18 +15,18 @@ export default function BusinessCard() {
       >
         {/* Header Background */}
         <div className="h-32 bg-gradient-to-r from-secondary to-primary relative">
-          <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay"></div>
+          <div className="absolute inset-0 opacity-20 bg-[url(https://www.transparenttextures.com/patterns/cubes.png)] mix-blend-overlay"></div>
         </div>
-        
+
         <div className="px-8 pb-8 pt-0 relative flex flex-col items-center">
           {/* Avatar Container */}
-          <motion.div 
+          <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.4, type: "spring" }}
             className="w-32 h-32 -mt-16 rounded-full border-4 border-white shadow-xl overflow-hidden bg-white relative"
           >
-            <Image 
+            <Image
               src="/profile.jpg"
               alt="Doris Kehinana"
               fill
@@ -44,10 +44,10 @@ export default function BusinessCard() {
 
           {/* Contact Information */}
           <div className="w-full space-y-3 mb-8">
-            <motion.a 
+            <motion.a
               whileHover={{ scale: 1.02, x: 5 }}
               whileTap={{ scale: 0.98 }}
-              href="mailto:doris@dohsh.co.bw" 
+              href="mailto:doris@dohsh.co.bw"
               className="flex items-center gap-4 p-4 rounded-2xl bg-gray-50 border border-gray-100 hover:border-primary/30 hover:bg-primary/5 transition-all group shadow-sm"
             >
               <div className="bg-primary/10 p-2.5 rounded-xl group-hover:bg-primary/20 transition-colors">
@@ -56,10 +56,10 @@ export default function BusinessCard() {
               <span className="text-dark font-medium font-sans">doris@dohsh.co.bw</span>
             </motion.a>
 
-            <motion.a 
+            <motion.a
               whileHover={{ scale: 1.02, x: 5 }}
               whileTap={{ scale: 0.98 }}
-              href="tel:+26774726733" 
+              href="tel:+26774726733"
               className="flex items-center gap-4 p-4 rounded-2xl bg-gray-50 border border-gray-100 hover:border-primary/30 hover:bg-primary/5 transition-all group shadow-sm"
             >
               <div className="bg-primary/10 p-2.5 rounded-xl group-hover:bg-primary/20 transition-colors">
@@ -71,7 +71,8 @@ export default function BusinessCard() {
 
           {/* Action Buttons */}
           <div className="w-full space-y-3">
-            <motion.a 
+            {/*
+            <motion.a
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               href="http://www.dohsh.co.bw"
@@ -82,8 +83,10 @@ export default function BusinessCard() {
               <Globe className="w-5 h-5" />
               Visit Website
             </motion.a>
-            
-            <motion.a 
+            */}
+
+            {/* 
+            <motion.a
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               href="https://openhive.pythonanywhere.com/"
@@ -94,6 +97,9 @@ export default function BusinessCard() {
               <ExternalLink className="w-5 h-5" />
               Visit DOHSH Portal
             </motion.a>
+            */}
+
+
           </div>
         </div>
       </motion.div>
