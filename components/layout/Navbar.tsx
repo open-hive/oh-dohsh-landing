@@ -13,6 +13,7 @@ const navLinks = [
   { name: "Portfolio", href: "/portfolio" },
   { name: "Contact Us", href: "/contact" },
   { name: "Feedback", href: "/feedback" },
+  { name: "Business Card", href: "/business-card" },
 ];
 
 export default function Navbar() {
@@ -119,25 +120,16 @@ export default function Navbar() {
             {/* Divider */}
             <div className="border-t border-gray-200 my-3"></div>
 
-            {/* Mobile Login/Signup */}
+            {/* Mobile eSHEQ Portal Button */}
             <Link
-              href="#"
-              // className="flex items-center gap-2 px-3 py-2 text-base font-medium rounded-md text-secondary hover:bg-blue-50"
-
-              className="flex items-center gap-2 px-6 py-3 border-[1.5px] border-[#0092CE] text-[#0092CE] text-[10px] font-semibold tracking-[0.16em] uppercase hover:bg-[#0092CE] hover:text-white transition-all"
-              onClick={() => setIsOpen(false)}
-            >
-              <UserPlus className="h-5 w-5" />
-              Sign Up
-            </Link>
-
-            <Link
-              href="#"
-              className="flex items-center gap-2.5 px-7 py-3 bg-[#0092CE] text-white text-[10px] font-bold tracking-[0.16em] uppercase hover:bg-[#01B9EB] transition-colors  text-base"
+              href="https://dohshesheportal.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2.5 px-7 py-3 bg-[#0092CE] text-white text-[10px] font-bold tracking-[0.16em] uppercase hover:bg-[#01B9EB] transition-colors shadow-sm"
               onClick={() => setIsOpen(false)}
             >
               <LogIn className="h-5 w-5" />
-              Client Login
+              eSHEQ Portal
             </Link>
           </div>
         </div>
