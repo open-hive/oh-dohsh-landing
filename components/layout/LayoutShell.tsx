@@ -1,9 +1,12 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { getAllSlugs } from "./../../data/people";
 
-// Routes that render without the site navbar and footer
-const chromeFreeRoutes = ["/business-card"];
+// Individual business cards render without the site navbar and footer.
+// Everything else — including /business-card itself and any 404 under it —
+// keeps the chrome so people are never stranded without navigation.
+const chromeFreeRoutes = getAllSlugs().map((slug) => `/business-card/${slug}`);
 
 export default function LayoutShell({
   navbar,
@@ -15,9 +18,7 @@ export default function LayoutShell({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const hideChrome = chromeFreeRoutes.some((route) =>
-    pathname.replace(/\/$/, "").startsWith(route)
-  );
+  const hideChrome = chromeFreeRoutes.includes(pathname.replace(/\/$/, ""));
 
   return (
     <>
