@@ -13,26 +13,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
-
-const CONTACT = {
-  name: "Doris Kehinana",
-  firstName: "Doris",
-  lastName: "Kehinana",
-  role: "Founder & CEO",
-  company: "DOHSH All Safety Consultancy",
-  email: "doris@dohsh.co.bw",
-  phoneDisplay: "+267 7472 6733",
-  phoneRaw: "+26774726733",
-  whatsapp: "26774726733",
-  websiteDisplay: "dohsh.co.bw",
-  websiteUrl: "https://www.dohsh.co.bw",
-  portalUrl: "https://dohshesheportal.com/",
-  city: "Jwaneng",
-  country: "Botswana",
-  // Replace with the real profile URLs. Leave a value empty to hide that icon.
-  linkedinUrl: "https://www.linkedin.com/company/dohsh-all-safety-consultancy",
-  facebookUrl: "https://www.facebook.com/dohsh",
-};
+import { COMPANY, type Person } from "./../data/people";
 
 function LinkedInIcon({ className }: { className?: string }) {
   return (
@@ -58,50 +39,50 @@ function FacebookIcon({ className }: { className?: string }) {
   );
 }
 
-const socialLinks = [
-  {
-    name: "LinkedIn",
-    href: CONTACT.linkedinUrl,
-    Icon: LinkedInIcon,
-  },
-  {
-    name: "WhatsApp",
-    href: CONTACT.whatsapp ? `https://wa.me/${CONTACT.whatsapp}` : "",
-    Icon: WhatsAppIcon,
-  },
-  {
-    name: "Facebook",
-    href: CONTACT.facebookUrl,
-    Icon: FacebookIcon,
-  },
-].filter((social) => social.href);
-
-function buildVCard() {
+function buildVCard(person: Person, company: string, city: string, country: string) {
   return [
     "BEGIN:VCARD",
     "VERSION:3.0",
-    `N:${CONTACT.lastName};${CONTACT.firstName};;;`,
-    `FN:${CONTACT.name}`,
-    `ORG:${CONTACT.company}`,
-    `TITLE:${CONTACT.role}`,
-    `TEL;TYPE=WORK,VOICE:${CONTACT.phoneRaw}`,
-    `EMAIL;TYPE=WORK:${CONTACT.email}`,
-    `URL:${CONTACT.websiteUrl}`,
-    `ADR;TYPE=WORK:;;;${CONTACT.city};;;${CONTACT.country}`,
+    `N:${person.lastName};${person.firstName};;;`,
+    `FN:${person.name}`,
+    `ORG:${company}`,
+    `TITLE:${person.role}`,
+    `TEL;TYPE=WORK,VOICE:${person.phoneRaw}`,
+    `EMAIL;TYPE=WORK:${person.email}`,
+    `URL:${COMPANY.websiteUrl}`,
+    `ADR;TYPE=WORK:;;;${city};;;${country}`,
     "END:VCARD",
   ].join("\r\n");
 }
 
-export default function BusinessCard() {
+export default function BusinessCard({ person }: { person: Person }) {
   const [shared, setShared] = useState(false);
   const shouldReduceMotion = useReducedMotion();
 
+  const company = person.company ?? COMPANY.name;
+  const city = person.city ?? COMPANY.city;
+  const country = person.country ?? COMPANY.country;
+
+  const socialLinks = [
+    { name: "LinkedIn", href: person.linkedinUrl, Icon: LinkedInIcon },
+    {
+      name: "WhatsApp",
+      href: person.whatsapp ? `https://wa.me/${person.whatsapp}` : undefined,
+      Icon: WhatsAppIcon,
+    },
+    { name: "Facebook", href: person.facebookUrl, Icon: FacebookIcon },
+  ].filter((social): social is { name: string; href: string; Icon: typeof LinkedInIcon } =>
+    Boolean(social.href)
+  );
+
   const handleSaveContact = () => {
-    const blob = new Blob([buildVCard()], { type: "text/vcard;charset=utf-8" });
+    const blob = new Blob([buildVCard(person, company, city, country)], {
+      type: "text/vcard;charset=utf-8",
+    });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "Doris-Kehinana-DOHSH.vcf";
+    link.download = `${person.slug}.vcf`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -110,8 +91,8 @@ export default function BusinessCard() {
 
   const handleShare = async () => {
     const shareData = {
-      title: `${CONTACT.name} | ${CONTACT.company}`,
-      text: `${CONTACT.name}, ${CONTACT.role} at ${CONTACT.company}`,
+      title: `${person.name} | ${company}`,
+      text: `${person.name}, ${person.role} at ${company}`,
       url: window.location.href,
     };
 
@@ -170,8 +151,8 @@ export default function BusinessCard() {
             className="w-28 h-28 -mt-14 rounded-full border-4 border-white shadow-xl overflow-hidden bg-white relative"
           >
             <Image
-              src="/profile.jpg"
-              alt="Doris Kehinana"
+              src={person.photo}
+              alt={person.name}
               fill
               className="object-cover"
               sizes="(max-width: 112px) 100vw, 112px"
@@ -182,15 +163,15 @@ export default function BusinessCard() {
           {/* Name, Role & Company */}
           <div className="text-center mt-4 mb-4">
             <h1 className="text-2xl font-bold text-dark font-heading tracking-tight">
-              {CONTACT.name}
+              {person.name}
             </h1>
             <p className="text-primary font-semibold text-xs tracking-widest uppercase mt-1">
-              {CONTACT.role}
+              {person.role}
             </p>
-            <p className="text-dark font-semibold font-heading text-sm mt-2">{CONTACT.company}</p>
+            <p className="text-dark font-semibold font-heading text-sm mt-2">{company}</p>
             <p className="flex items-center justify-center gap-1.5 text-gray-500 text-xs mt-1.5">
               <MapPin className="w-3.5 h-3.5" />
-              {CONTACT.city}, {CONTACT.country}
+              {city}, {country}
             </p>
           </div>
 
@@ -216,31 +197,31 @@ export default function BusinessCard() {
           {/* Contact Information */}
           <div className="w-full rounded-2xl border border-gray-100 divide-y divide-gray-100 overflow-hidden mb-5">
             <a
-              href={`mailto:${CONTACT.email}`}
+              href={`mailto:${person.email}`}
               className="flex items-center gap-3 px-4 py-3 hover:bg-primary/5 transition-colors group"
             >
               <span className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors shrink-0">
                 <Mail className="w-4 h-4 text-primary" />
               </span>
               <span className="text-dark font-medium font-sans text-sm break-all">
-                {CONTACT.email}
+                {person.email}
               </span>
             </a>
 
             <a
-              href={`tel:${CONTACT.phoneRaw}`}
+              href={`tel:${person.phoneRaw}`}
               className="flex items-center gap-3 px-4 py-3 hover:bg-primary/5 transition-colors group"
             >
               <span className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors shrink-0">
                 <Phone className="w-4 h-4 text-primary" />
               </span>
               <span className="text-dark font-medium font-sans text-sm">
-                {CONTACT.phoneDisplay}
+                {person.phoneDisplay}
               </span>
             </a>
 
             <a
-              href={CONTACT.websiteUrl}
+              href={COMPANY.websiteUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 px-4 py-3 hover:bg-primary/5 transition-colors group"
@@ -249,7 +230,7 @@ export default function BusinessCard() {
                 <Globe className="w-4 h-4 text-primary" />
               </span>
               <span className="text-dark font-medium font-sans text-sm">
-                {CONTACT.websiteDisplay}
+                {COMPANY.websiteDisplay}
               </span>
               <ExternalLink className="w-4 h-4 text-gray-400 ml-auto shrink-0" />
             </a>
@@ -272,7 +253,7 @@ export default function BusinessCard() {
               <motion.a
                 whileHover={shouldReduceMotion ? undefined : { scale: 1.02 }}
                 whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
-                href={CONTACT.websiteUrl}
+                href={COMPANY.websiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center text-center gap-2 border-2 border-primary text-primary py-3 rounded-2xl font-semibold text-sm hover:bg-primary hover:text-white transition-colors"
@@ -283,7 +264,7 @@ export default function BusinessCard() {
               <motion.a
                 whileHover={shouldReduceMotion ? undefined : { scale: 1.02 }}
                 whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
-                href={CONTACT.portalUrl}
+                href={COMPANY.portalUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center text-center gap-2 bg-dark text-white py-3 rounded-2xl font-semibold text-sm shadow-lg shadow-dark/20 hover:bg-black transition-colors"
