@@ -13,7 +13,6 @@ const navLinks = [
   { name: "Portfolio", href: "/portfolio" },
   { name: "Contact Us", href: "/contact" },
   { name: "Feedback", href: "/feedback" },
-  { name: "Business Card", href: "/business-card" },
 ];
 
 export default function Navbar() {

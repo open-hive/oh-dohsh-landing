@@ -3,6 +3,7 @@ import { Inter, Barlow } from "next/font/google";
 import "./globals.css";
 import Navbar from "./../components/layout/Navbar";
 import Footer from "./../components/layout/Footer";
+import LayoutShell from "./../components/layout/LayoutShell";
 
 // Load Google Fonts
 const inter = Inter({ 
@@ -29,16 +30,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${barlow.variable} antialiased`}>
-        {/* Navbar sits at the top of every page */}
-        <Navbar />
-        
-        {/* Main Content Area */}
-        <main className="min-h-screen flex flex-col">
-          {children}
-        </main>
-
-        {/* Footer sits at the bottom of every page */}
-        <Footer />
+        {/* Navbar and Footer are hidden on chrome-free routes (see LayoutShell) */}
+        <LayoutShell navbar={<Navbar />} footer={<Footer />}>
+          {/* Main Content Area */}
+          <main className="min-h-screen flex flex-col">
+            {children}
+          </main>
+        </LayoutShell>
       </body>
     </html>
   );
